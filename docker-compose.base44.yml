@@ -1,0 +1,26 @@
+# Base44 sandbox/dev environment for this static site.
+# The whole site is a single index.html plus the images referenced by it,
+# served straight from the checkout — no build step, no database, no secrets.
+services:
+  web:
+    image: python:3.12-alpine
+    # Static server binds 0.0.0.0:80 -> host 3000. Serves files from the bind mount
+    # on every request, so edits to index.html / images show on the next page load.
+    # (nginx is not used: the sandbox checkout directory is mode 700 root-owned,
+    # so nginx's non-root worker gets EACCES; this process runs as root.)
+    command: ["python3", "-m", "http.server", "80", "--bind", "0.0.0.0", "--directory", "/site"]
+    restart: on-failure
+    ports:
+      - "3000:80"
+    volumes:
+      - .:/site:ro
+    labels:
+      base44.project: "ทรัพย์ไพศาล อลูมิเนียม"
+      base44.kind: web
+      base44.port: 3000
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1/', timeout=2).status == 200 else 1)"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+      start_period: 5s
