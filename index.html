@@ -3,440 +3,424 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>อุดมพงษ์ อลูมิเนียม | รับติดตั้งงานกระจก อลูมิเนียม ครบวงจร</title>
-<meta name="description" content="รับออกแบบและติดตั้งบานสไลด์มินิมอล กั้นห้องกระจก ประตู-หน้าต่างอลูมิเนียม งานกระจกระเบียง โดยทีมช่างมืออาชีพ">
-<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --primary:#1c3f5e;
-    --primary-dark:#14304a;
-    --accent:#3fa9c9;
-    --dark:#1a1a1a;
-    --gray:#6b7280;
-    --light:#f4f7f9;
-    --radius:12px;
-    --shadow:0 6px 24px rgba(0,0,0,.09);
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:'Prompt',sans-serif;color:var(--dark);line-height:1.75;background:#fff}
-  a{text-decoration:none;color:inherit}
-  img{max-width:100%;display:block}
-  .container{max-width:1180px;margin:0 auto;padding:0 20px}
-  .btn{display:inline-block;padding:13px 30px;border-radius:var(--radius);font-weight:500;transition:.3s;cursor:pointer;border:none;font-family:inherit;font-size:1rem}
-  .btn-primary{background:var(--accent);color:#fff;box-shadow:0 6px 18px rgba(63,169,201,.35)}
-  .btn-primary:hover{background:#2e8fad;transform:translateY(-2px)}
-  .btn-outline{border:2px solid rgba(255,255,255,.85);color:#fff;background:rgba(255,255,255,.08);backdrop-filter:blur(4px)}
-  .btn-outline:hover{background:#fff;color:var(--primary)}
-
-  .topbar{background:var(--primary-dark);color:#fff;font-size:.87rem;padding:8px 0}
-  .topbar .container{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
-  .topbar a:hover{color:var(--accent)}
-
-  header{background:#fff;box-shadow:var(--shadow);position:sticky;top:0;z-index:1000}
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-  .logo{display:flex;flex-direction:column;line-height:1.15}
-  .logo b{font-size:1.45rem;color:var(--primary);font-weight:700}
-  .logo small{font-size:.85rem;color:var(--accent);letter-spacing:1px}
-  .nav-links{display:flex;gap:28px;list-style:none}
-  .nav-links a{font-weight:500;transition:.2s}
-  .nav-links a:hover{color:var(--accent)}
-  .menu-btn{display:none;font-size:1.6rem;background:none;border:none;cursor:pointer}
-
-  /* ===== HERO : ข้อความชิดซ้าย + เห็นภาพพื้นหลัง ===== */
-  .hero{
-    position:relative;min-height:90vh;display:flex;align-items:center;color:#fff;
-    background:url('IMG_2501.JPG') center center/cover no-repeat;
-    padding:100px 0;overflow:hidden;
-  }
-  .hero::before{
-    content:'';position:absolute;inset:0;
-    background:linear-gradient(100deg,
-      rgba(14,32,50,.92) 0%,
-      rgba(14,32,50,.80) 32%,
-      rgba(14,32,50,.45) 58%,
-      rgba(14,32,50,.15) 100%);
-  }
-  .hero::after{
-    content:'';position:absolute;inset:auto 0 0 0;height:120px;
-    background:linear-gradient(transparent,rgba(255,255,255,.12));
-  }
-  .hero .container{position:relative;z-index:2}
-  .hero-inner{max-width:660px;text-align:left;border-left:4px solid var(--accent);padding-left:28px}
-  .hero .eyebrow{display:inline-block;background:rgba(63,169,201,.22);border:1px solid rgba(255,255,255,.45);padding:6px 18px;border-radius:30px;font-size:.9rem;margin-bottom:20px;backdrop-filter:blur(6px)}
-  .hero h1{font-size:3.1rem;font-weight:700;line-height:1.25;margin-bottom:20px;text-shadow:0 3px 20px rgba(0,0,0,.55)}
-  .hero h1 em{font-style:normal;color:var(--accent)}
-  .hero p{font-size:1.08rem;margin-bottom:34px;opacity:.95;text-shadow:0 2px 10px rgba(0,0,0,.5)}
-  .hero-btns{display:flex;gap:14px;flex-wrap:wrap}
-  .hero-mini{display:flex;gap:26px;margin-top:38px;flex-wrap:wrap;font-size:.9rem;opacity:.92}
-  .hero-mini div b{display:block;font-size:1.6rem;color:var(--accent);line-height:1.2}
-
-  section{padding:80px 0}
-  .section-title{text-align:center;margin-bottom:50px}
-  .section-title span{color:var(--accent);font-size:.9rem;letter-spacing:2px;text-transform:uppercase;font-weight:500}
-  .section-title h2{font-size:2rem;font-weight:600;margin:6px 0 10px}
-  .section-title p{color:var(--gray);max-width:680px;margin:0 auto}
-
-  .features{background:var(--light)}
-  .grid-4{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:26px}
-  .feature-card{background:#fff;padding:32px 24px;border-radius:var(--radius);text-align:center;box-shadow:var(--shadow);transition:.3s}
-  .feature-card:hover{transform:translateY(-6px)}
-  .feature-card .icon{font-size:2.3rem;margin-bottom:12px}
-  .feature-card h3{font-size:1.08rem;margin-bottom:6px}
-  .feature-card p{color:var(--gray);font-size:.92rem}
-
-  .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:28px}
-  .service-card{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:#fff;transition:.3s}
-  .service-card:hover{transform:translateY(-6px)}
-  .service-card .thumb{height:220px;background-size:cover;background-position:center}
-  .service-body{padding:24px}
-  .service-body h3{font-size:1.15rem;margin-bottom:10px;color:var(--primary)}
-  .service-body p{color:var(--gray);font-size:.94rem}
-
-  .portfolio{background:var(--light)}
-  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
-  .gallery figure{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);cursor:pointer;background:#fff}
-  .gallery .img{height:230px;background-size:cover;background-position:center;transition:.4s}
-  .gallery figure:hover .img{transform:scale(1.07)}
-  .gallery figcaption{position:absolute;inset:auto 0 0 0;padding:10px 14px;font-size:.9rem;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.7));opacity:0;transition:.3s}
-  .gallery figure:hover figcaption{opacity:1}
-
-  .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;place-items:center;z-index:2000;padding:20px}
-  .lightbox.open{display:grid}
-  .lightbox img{max-width:92vw;max-height:88vh;border-radius:8px}
-  .lightbox .close{position:absolute;top:18px;right:26px;color:#fff;font-size:2.4rem;cursor:pointer;line-height:1}
-  .lightbox .arrow{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:2.6rem;cursor:pointer;padding:10px 18px;user-select:none}
-  .lightbox .prev{left:10px}
-  .lightbox .next{right:10px}
-
-  /* ===== FAQ ===== */
-  .faq-wrap{max-width:860px;margin:0 auto;display:grid;gap:14px}
-  .faq-item{background:#fff;border:1px solid #e5eaee;border-radius:var(--radius);overflow:hidden;transition:.3s}
-  .faq-item.active{border-color:var(--accent);box-shadow:var(--shadow)}
-  .faq-q{width:100%;text-align:left;background:none;border:none;font-family:inherit;font-size:1rem;font-weight:500;
-         padding:18px 22px;cursor:pointer;display:flex;justify-content:space-between;gap:16px;align-items:center;color:var(--primary)}
-  .faq-q::after{content:'+';font-size:1.5rem;color:var(--accent);transition:.3s;flex-shrink:0}
-  .faq-item.active .faq-q::after{content:'−'}
-  .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s}
-  .faq-a p{padding:0 22px 20px;color:var(--gray);font-size:.95rem}
-  .faq-item.active .faq-a{max-height:400px}
-
-  .contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:50px}
-  .info-box{background:var(--light);padding:32px;border-radius:var(--radius)}
-  .info-box h3{margin-bottom:20px;color:var(--primary)}
-  .contact-link{display:flex;gap:16px;align-items:center;background:#fff;padding:18px 20px;border-radius:var(--radius);
-                margin-bottom:16px;box-shadow:var(--shadow);transition:.3s;border-left:4px solid var(--accent)}
-  .contact-link:hover{transform:translateX(5px);border-left-color:var(--primary)}
-  .contact-link .ic{font-size:1.6rem}
-  .contact-link h4{font-size:.95rem;margin-bottom:0;color:var(--primary)}
-  .contact-link p{color:var(--gray);font-size:.95rem;margin:0}
-  .contact-link.line{border-left-color:#06C755}
-  .contact-link.line:hover{border-left-color:#04a548}
-  .note{font-size:.87rem;color:var(--gray);margin-top:8px}
-  form{display:grid;gap:14px}
-  input,textarea,select{padding:13px;border:1px solid #ddd;border-radius:var(--radius);font-family:inherit;font-size:.95rem}
-  input:focus,textarea:focus,select:focus{outline:2px solid var(--accent);border-color:transparent}
-  textarea{resize:vertical;min-height:130px}
-
-  footer{background:var(--primary-dark);color:#c7d3dd;padding:56px 0 22px;font-size:.93rem}
-  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr;gap:36px;margin-bottom:32px}
-  footer h4{color:#fff;margin-bottom:14px;font-size:1rem}
-  footer .flogo b{display:block;font-size:1.3rem;color:#fff}
-  footer .flogo small{color:var(--accent);letter-spacing:1px}
-  footer ul{list-style:none}
-  footer li{margin-bottom:8px}
-  footer a:hover{color:var(--accent)}
-  .copyright{border-top:1px solid rgba(255,255,255,.15);padding-top:18px;text-align:center;font-size:.86rem}
-
-  .float-stack{position:fixed;right:20px;bottom:20px;display:grid;gap:12px;z-index:999}
-  .float-btn{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font-size:1.5rem;color:#fff;
-             box-shadow:0 4px 14px rgba(0,0,0,.25);transition:.3s}
-  .float-btn:hover{transform:scale(1.1)}
-  .fb-call{background:var(--accent)}
-  .fb-line{background:#06C755}
-
-  @media(max-width:900px){
-    .contact-wrap{grid-template-columns:1fr}
-    .foot-grid{grid-template-columns:1fr 1fr}
-    .hero h1{font-size:2.4rem}
-  }
-  @media(max-width:640px){
-    .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:18px;gap:14px;box-shadow:var(--shadow)}
-    .nav-links.open{display:flex}
-    .menu-btn{display:block}
-    .hero{min-height:80vh;padding:70px 0}
-    .hero::before{background:linear-gradient(rgba(14,32,50,.85),rgba(14,32,50,.7))}
-    .hero-inner{padding-left:18px;border-left-width:3px}
-    .hero h1{font-size:1.9rem}
-    .hero-mini{gap:18px}
-    .foot-grid{grid-template-columns:1fr}
-    .gallery{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
-    .gallery .img{height:160px}
-  }
-</style>
+<title>ST aluminum — รับเหมาติดตั้งกระจก อลูมิเนียม ครบวงจร</title>
+<meta name="description" content="ST aluminum รับเหมาติดตั้งกระจกและอลูมิเนียม กั้นห้องกระจก บานสไลด์ ประตู-หน้าต่าง ระเบียง และหลังคากระจก วัดหน้างานฟรี ราคาชัดเจน รับประกันงานติดตั้ง 5 ปี">
+<meta name="theme-color" content="#F2F4F7">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ST aluminum — รับเหมาติดตั้งกระจก อลูมิเนียม">
+<meta property="og:description" content="กั้นห้องกระจก บานสไลด์ ประตู-หน้าต่าง ระเบียง และหลังคากระจก · วัดหน้างานฟรี · รับประกัน 5 ปี">
+<meta property="og:image" content="assets/img/og-cover.jpg">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" as="image" href="assets/img/hero-install.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
 
+<div class="scroll-meter" id="scrollMeter"></div>
+
+<!-- ============ TOP STRIP ============ -->
 <div class="topbar">
-  <div class="container">
-    <!-- <<< แก้เบอร์โทรตรง href="tel:0812345678" และข้อความ -->
-    <span>📞 <a href="tel:0812345678">081-234-5678</a> &nbsp;|&nbsp;
-    💬 <a href="https://line.me/R/ti/p/~@udomphong" target="_blank" rel="noopener">LINE: @udomphong</a></span>
-    <span>ปรึกษา / ประเมินราคาฟรี</span>
+  <div class="shell topbar__inner">
+    <div class="topbar__meta">
+      <span>วัดหน้างานฟรี</span>
+      <span>ราคาชัดเจน</span>
+      <span>รับประกัน 5 ปี</span>
+    </div>
+    <div class="topbar__links">
+      <a href="tel:021234567">โทร 02-123-4567</a>
+      <a href="https://line.me/R/ti/p/~@staluminum" target="_blank" rel="noopener">LINE @staluminum</a>
+    </div>
   </div>
 </div>
 
-<header>
-  <div class="container nav">
-    <a href="#home" class="logo"><b>อุดมพงษ์</b><small>อลูมิเนียม</small></a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#home">หน้าแรก</a></li>
-      <li><a href="#services">บริการของเรา</a></li>
-      <li><a href="#portfolio">ผลงานของเรา</a></li>
-      <li><a href="#faq">คำถามที่พบบ่อย</a></li>
-      <li><a href="#contact">ติดต่อเรา</a></li>
+<!-- ============ NAVIGATION ============ -->
+<header class="site-head" id="siteHead">
+  <div class="shell nav">
+    <a href="#home" class="brand" aria-label="ST aluminum — หน้าแรก">
+      <span class="brand__mark">ST</span>
+      <span class="brand__text">aluminum<small>Glass &amp; Aluminium</small></span>
+    </a>
+
+    <ul class="nav__links" id="navLinks">
+      <li><a href="#services">บริการ</a></li>
+      <li><a href="#works">ผลงาน</a></li>
+      <li><a href="#process">ขั้นตอน</a></li>
+      <li><a href="#faq">คำถาม</a></li>
     </ul>
-    <button class="menu-btn" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+
+    <a href="#contact" class="btn nav__cta">ขอใบเสนอราคา <span class="btn__arrow">→</span></a>
+    <button class="nav__menu" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="เปิดเมนู">
+      <span></span>
+    </button>
   </div>
 </header>
 
+<!-- ============ HERO ============ -->
 <section class="hero" id="home">
-  <div class="container">
-    <div class="hero-inner">
-      <span class="eyebrow">ติดตั้งมาตรฐาน เน้นคุณภาพงาน</span>
-      <h1>ศูนย์รวมงาน<br><em>กระจก อลูมิเนียม</em><br>ครบวงจร</h1>
-      <p>รับออกแบบและติดตั้งบานสไลด์มินิมอล กั้นห้องกระจก ประตู-หน้าต่างอลูมิเนียม และงานกระจกระเบียง โดยทีมช่างมืออาชีพ พร้อมวัสดุคุณภาพสูง</p>
-      <div class="hero-btns">
-        <a href="#contact" class="btn btn-primary">ปรึกษาประเมินราคาฟรี</a>
-        <a href="#services" class="btn btn-outline">ดูบริการของเรา</a>
+  <div class="hero__narrative">
+    <p class="hero__eyebrow">รับเหมาติดตั้งกระจก &amp; อลูมิเนียม</p>
+    <h1>ติดตั้งกระจก<br>อลูมิเนียม<br><em>ครบ จบที่เดียว</em></h1>
+    <p class="hero__lede">
+      รับกั้นห้องกระจก บานสไลด์ ประตู-หน้าต่าง ระเบียง และหลังคากระจก
+      ช่างของเราวัดหน้างานเอง ติดตั้งเอง — ราคาชัดเจนตั้งแต่ต้น ไม่มีบวกเพิ่มทีหลัง
+    </p>
+    <div class="hero__actions">
+      <a href="#contact" class="btn">ขอใบเสนอราคาฟรี <span class="btn__arrow">→</span></a>
+      <a href="#works" class="btn btn--ghost">ดูผลงานที่ผ่านมา <span class="btn__arrow">↘</span></a>
+    </div>
+    <dl class="hero__stats">
+      <div><dd>ฟรี</dd><dt>วัดหน้างาน กทม. และปริมณฑล</dt></div>
+      <div><dd>1 วัน</dd><dt>ส่งใบเสนอราคากลับ</dt></div>
+      <div><dd>5 ปี</dd><dt>รับประกันงานติดตั้ง</dt></div>
+    </dl>
+  </div>
+
+  <figure class="hero__visual">
+    <img src="assets/img/hero-install.jpg" alt="กั้นห้องกระจกบานใหญ่กรอบอลูมิเนียมในห้องนั่งเล่นที่สว่างและโปร่ง" fetchpriority="high">
+    <figcaption class="hero__fig">กั้นห้องกระจก · กรอบอลูมิเนียมสลิม</figcaption>
+  </figure>
+</section>
+
+<!-- ============ TRUST STRIP ============ -->
+<section class="spec-strip" aria-label="จุดเด่นของเรา">
+  <div class="shell spec-strip__grid">
+    <article class="spec-item" data-reveal>
+      <span class="spec-item__index">01</span>
+      <h3>วัดหน้างานฟรี</h3>
+      <p>ช่างเข้าไปวัดจริงก่อนเสนอราคา ไม่มีค่าใช้จ่าย</p>
+    </article>
+    <article class="spec-item" data-reveal style="--delay:80ms">
+      <span class="spec-item__index">02</span>
+      <h3>ราคาชัดเจน</h3>
+      <p>เสนอราคาเป็นรายการ บอกวัสดุและจำนวนให้ครบ</p>
+    </article>
+    <article class="spec-item" data-reveal style="--delay:160ms">
+      <span class="spec-item__index">03</span>
+      <h3>ช่างประจำทีมเดียว</h3>
+      <p>ทีมติดตั้งของเราเอง ดูแลงานตั้งแต่ต้นจนตรวจรับ</p>
+    </article>
+    <article class="spec-item" data-reveal style="--delay:240ms">
+      <span class="spec-item__index">04</span>
+      <h3>รับประกัน 5 ปี</h3>
+      <p>งานติดตั้งและอุปกรณ์ พร้อมบริการหลังการขาย</p>
+    </article>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="services" id="services">
+  <div class="shell">
+    <div class="section-head">
+      <div class="section-head__aside">
+        <span class="label section-head__index">บริการของเรา</span>
+        <h2 class="section-head__title">รับติดตั้งอะไรบ้าง</h2>
       </div>
-      <div class="hero-mini">
-        <div><b>100%</b>วัสดุเกรดพรีเมียม</div>
-        <div><b>ฟรี</b>ประเมินหน้างาน</div>
-        <div><b>รับประกัน</b>บริการหลังการขาย</div>
+      <p class="section-head__note">
+        งานกระจกและอลูมิเนียมสำหรับบ้าน คอนโด และออฟฟิศ — ทำแบบ ประเมินราคา และติดตั้งโดยทีมเดียว
+      </p>
+    </div>
+
+    <div class="services__grid">
+      <article class="service" data-reveal>
+        <div class="service__frame">
+          <img src="assets/img/svc-partition.jpg" alt="กั้นห้องกระจกบานสูงกรอบอลูมิเนียมในห้องโล่ง" loading="lazy">
+        </div>
+        <div class="service__body">
+          <h3>กั้นห้องกระจก &amp; บานสไลด์</h3>
+          <p>เพิ่มพื้นที่ใช้สอยให้เป็นสัดส่วน โปร่งและมีแสงธรรมชาติ เหมาะกับคอนโด บ้าน และออฟฟิศ</p>
+          <ul class="service__points">
+            <li>กระจกเทมเปอร์ 8–12 มม.</li>
+            <li>รางสลิม เปิด-ปิดลื่น ไม่มีธรณีสูง</li>
+          </ul>
+          <a class="link-btn" href="#contact">ขอราคางานนี้ <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <article class="service" data-reveal style="--delay:80ms">
+        <div class="service__frame">
+          <img src="assets/img/svc-door.jpg" alt="ประตูบานเลื่อนอลูมิเนียมพร้อมกระจกเทมเปอร์" loading="lazy">
+        </div>
+        <div class="service__body">
+          <h3>ประตู - หน้าต่างอลูมิเนียม</h3>
+          <p>บานเลื่อน บานเปิด และบานกระทุ้ง ปิดสนิท กันน้ำ กันฝุ่น และลดเสียงจากภายนอก</p>
+          <ul class="service__points">
+            <li>อลูมิเนียมเกรดงานสถาปัตย์</li>
+            <li>ซีลยางและซิลิโคนกันรั่วซึม</li>
+          </ul>
+          <a class="link-btn" href="#contact">ขอราคางานนี้ <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <article class="service" data-reveal style="--delay:160ms">
+        <div class="service__frame">
+          <img src="assets/img/svc-balcony.jpg" alt="ระเบียงกระจกพร้อมราวจับอลูมิเนียมในคอนโด" loading="lazy">
+        </div>
+        <div class="service__body">
+          <h3>ระเบียงกระจก &amp; ราวกระจก</h3>
+          <p>กั้นระเบียงด้วยกระจกเทมเปอร์ มองเห็นวิวโล่ง พร้อมราวจับอลูมิเนียมที่จับมั่นคง</p>
+          <ul class="service__points">
+            <li>กระจกเทมเปอร์ 10–12 มม.</li>
+            <li>ยึดด้วยสลักและฐานที่ได้มาตรฐาน</li>
+          </ul>
+          <a class="link-btn" href="#contact">ขอราคางานนี้ <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <article class="service" data-reveal style="--delay:240ms">
+        <div class="service__frame">
+          <img src="assets/img/svc-canopy.jpg" alt="หลังคากระจกโครงอลูมิเนียมหน้าบ้าน" loading="lazy">
+        </div>
+        <div class="service__body">
+          <h3>หลังคา &amp; กันสาดกระจก</h3>
+          <p>คลุมทางเข้าและพื้นที่ใช้งานกลางแจ้ง กันแดดกันฝน แต่ยังรับแสงธรรมชาติได้ทั้งวัน</p>
+          <ul class="service__points">
+            <li>โครงอลูมิเนียมรับแรงลม</li>
+            <li>ออกแบบทางระบายน้ำ ไม่มีน้ำขัง</li>
+          </ul>
+          <a class="link-btn" href="#contact">ขอราคางานนี้ <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORKS ============ -->
+<section class="works" id="works">
+  <div class="shell">
+    <div class="section-head">
+      <div class="section-head__aside">
+        <span class="label section-head__index">ผลงานที่ส่งมอบ</span>
+        <h2 class="section-head__title">งานติดตั้งจริง</h2>
+      </div>
+      <p class="section-head__note">ตัวอย่างงานล่าสุดจากทีมช่างของเรา — คลิกที่ภาพเพื่อดูขนาดเต็ม</p>
+    </div>
+
+    <div class="works__grid" id="worksGrid">
+      <button class="work work--feature" type="button" data-caption="กั้นห้องกระจกสำนักงาน · สุขุมวิท">
+        <img src="assets/img/work-01.jpg" alt="กั้นห้องกระจกในสำนักงานด้วยบานสลิม" loading="lazy">
+        <span class="work__cap">กั้นห้องกระจกสำนักงาน · สุขุมวิท <em>กั้นห้องกระจก</em></span>
+      </button>
+      <button class="work" type="button" data-caption="บานเลื่อนเปิดระเบียง · คอนโดอโศก">
+        <img src="assets/img/work-02.jpg" alt="บานเลื่อนกระจกเปิดสู่ระเบียงคอนโด" loading="lazy">
+        <span class="work__cap">บานเลื่อนเปิดระเบียง · อโศก <em>บานสไลด์</em></span>
+      </button>
+      <button class="work" type="button" data-caption="หน้าต่างอลูมิเนียมบ้านเดี่ยว · นนทบุรี">
+        <img src="assets/img/work-03.jpg" alt="หน้าต่างอลูมิเนียมบานใหญ่ในบ้านเดี่ยว" loading="lazy">
+        <span class="work__cap">หน้าต่างบ้านเดี่ยว · นนทบุรี <em>หน้าต่างอลูมิเนียม</em></span>
+      </button>
+      <button class="work" type="button" data-caption="ราวระเบียงกระจก · ชะอำ">
+        <img src="assets/img/work-04.jpg" alt="ราวระเบียงกระจกบ้านพักตากอากาศ" loading="lazy">
+        <span class="work__cap">ราวระเบียงกระจก · ชะอำ <em>ระเบียงกระจก</em></span>
+      </button>
+      <button class="work" type="button" data-caption="ห้องอาบน้ำกระจก · ทาวน์โฮม">
+        <img src="assets/img/work-05.jpg" alt="ห้องอาบน้ำกระจกกรอบอลูมิเนียม" loading="lazy">
+        <span class="work__cap">ห้องอาบน้ำกระจก · ทาวน์โฮม <em>กั้นห้องกระจก</em></span>
+      </button>
+      <button class="work" type="button" data-caption="รางบานเลื่อนฝังพื้น · โชว์รูมบางนา">
+        <img src="assets/img/work-06.jpg" alt="รางบานเลื่อนอลูมิเนียมฝังพื้น" loading="lazy">
+        <span class="work__cap">รางบานเลื่อน · บางนา <em>บานสไลด์</em></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="process" id="process">
+  <div class="shell">
+    <div class="section-head">
+      <div class="section-head__aside">
+        <span class="label section-head__index">ขั้นตอนการทำงาน</span>
+        <h2 class="section-head__title">จากโทรครั้งแรก ถึงวันตรวจรับ</h2>
+      </div>
+      <p class="section-head__note">สี่ขั้นตอนเข้าใจง่าย ทุกขั้นมีคนของเราดูแล และแจ้งความคืบหน้าให้ทราบ</p>
+    </div>
+
+    <ol class="process__steps">
+      <li class="step" data-reveal>
+        <span class="step__num">01</span>
+        <h3>โทรหรือทัก LINE</h3>
+        <p>แจ้งขนาดคร่าว ๆ ส่งแบบ หรือนัดให้ช่างเข้าดูหน้างาน</p>
+      </li>
+      <li class="step" data-reveal style="--delay:80ms">
+        <span class="step__num">02</span>
+        <h3>วัดหน้างานฟรี</h3>
+        <p>ช่างเข้าไปวัดภายใน 1–2 วัน พร้อมแนะนำวัสดุที่เหมาะกับพื้นที่</p>
+      </li>
+      <li class="step" data-reveal style="--delay:160ms">
+        <span class="step__num">03</span>
+        <h3>เสนอราคา &amp; แบบ</h3>
+        <p>ได้ใบเสนอราคาเป็นรายการภายใน 1 วันทำการ ไม่มีค่าใช้จ่ายแอบแฝง</p>
+      </li>
+      <li class="step" data-reveal style="--delay:240ms">
+        <span class="step__num">04</span>
+        <h3>ผลิต &amp; ติดตั้ง</h3>
+        <p>ผลิต 7–14 วัน แล้วเข้าติดตั้ง ตรวจรับงานพร้อมรับประกัน 5 ปี</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" id="faq">
+  <div class="shell">
+    <div class="section-head">
+      <div class="section-head__aside">
+        <span class="label section-head__index">คำถามที่พบบ่อย</span>
+        <h2 class="section-head__title">ถามก่อนตัดสินใจ</h2>
+      </div>
+      <p class="section-head__note">คำถามที่ลูกค้าถามเข้ามาบ่อยที่สุด — ถ้าไม่เจอคำตอบ ทัก LINE มาได้เลย</p>
+    </div>
+
+    <div class="faq__list">
+      <div class="faq__item">
+        <button class="faq__q" type="button" aria-expanded="false">วัดหน้างานมีค่าใช้จ่ายไหม?</button>
+        <div class="faq__a"><div><p>ฟรีครับ ในเขตกรุงเทพฯ และปริมณฑล ส่วนต่างจังหวัดคิดค่าเดินทางตามระยะทางจริง และหักคืนให้เมื่อยืนยันสั่งงาน</p></div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q" type="button" aria-expanded="false">ใช้เวลากี่วันกว่าจะติดตั้งเสร็จ?</button>
+        <div class="faq__a"><div><p>หลังวัดหน้างานและยืนยันแบบ ใช้เวลาผลิต 7–14 วันทำการ และติดตั้ง 1–3 วันขึ้นอยู่กับขนาดงาน โดยเราจะนัดวันติดตั้งให้ล่วงหน้าชัดเจน</p></div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q" type="button" aria-expanded="false">ราคาเริ่มต้นประมาณเท่าไหร่?</button>
+        <div class="faq__a"><div><p>ราคาขึ้นอยู่กับขนาดช่องเปิด ชนิดกระจก และรุ่นอลูมิเนียม แจ้งขนาดหรือส่งแบบมา ทีมงานจะประเมินเป็นรายการให้ภายใน 1 วันทำการ</p></div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q" type="button" aria-expanded="false">รับประกันอะไรบ้าง?</button>
+        <div class="faq__a"><div><p>รับประกันงานติดตั้งและอุปกรณ์ 5 ปี ครอบคลุมการรั่วซึมจากงานติดตั้งและรางเลื่อนฝืด พร้อมเข้าตรวจเช็กให้ฟรี 1 ครั้งในปีแรก</p></div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q" type="button" aria-expanded="false">รับงานต่างจังหวัดไหม?</button>
+        <div class="faq__a"><div><p>รับครับ ทั้งงานบ้านและงานอาคารพาณิชย์ ค่าเดินทางคิดตามระยะทางจริง งานขนาดใหญ่หลายครั้งไม่คิดเพิ่ม แจ้งพื้นที่เข้ามาเพื่อประเมินได้เลย</p></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="features">
-  <div class="container">
-    <div class="grid-4">
-      <div class="feature-card"><div class="icon">🏅</div><h3>คุณภาพมาตรฐาน</h3><p>วัสดุเกรดพรีเมียม ทนทาน</p></div>
-      <div class="feature-card"><div class="icon">⏱️</div><h3>ตรงเวลา</h3><p>นัดหมายชัดเจน ส่งงานตามกำหนด</p></div>
-      <div class="feature-card"><div class="icon">👷</div><h3>ทีมช่างมืออาชีพ</h3><p>ประสบการณ์ติดตั้งงานกระจก</p></div>
-      <div class="feature-card"><div class="icon">🤝</div><h3>บริการหลังการขาย</h3><p>ดูแลและแก้ไขปัญหาหลังติดตั้ง</p></div>
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="shell">
+    <div class="section-head">
+      <div class="section-head__aside">
+        <span class="label section-head__index">ติดต่อเรา</span>
+        <h2 class="section-head__title">ขอใบเสนอราคา</h2>
+      </div>
+      <p class="section-head__note">ส่งขนาดช่องเปิดหรือรูปหน้างานมา ทีมงานจะติดต่อกลับพร้อมราคาภายใน 1 วันทำการ</p>
     </div>
-  </div>
-</section>
 
-<section id="services">
-  <div class="container">
-    <div class="section-title">
-      <span>Our Services</span>
-      <h2>บริการของเรา</h2>
-      <p>บริการออกแบบและติดตั้งกระจกอลูมิเนียมคุณภาพสูง สำหรับบ้านพักอาศัย และอาคารพาณิชย์</p>
-    </div>
-    <div class="grid-3">
-      <div class="service-card">
-        <div class="thumb" style="background-image:url('IMG_2516.JPG')"></div>
-        <div class="service-body"><h3>กั้นห้องกระจก &amp; บานสไลด์</h3><p>กั้นห้องเพิ่มพื้นที่ใช้สอยให้เป็นสัดส่วน โปร่ง สบายตา เหมาะสำหรับบ้าน คอนโด และออฟฟิศ</p></div>
+    <div class="contact__grid">
+      <div class="contact__info">
+        <dl>
+          <div class="info-row"><dt>โทรศัพท์</dt><dd><a href="tel:021234567">02-123-4567</a></dd></div>
+          <div class="info-row"><dt>LINE</dt><dd><a href="https://line.me/R/ti/p/~@staluminum" target="_blank" rel="noopener">@staluminum</a></dd></div>
+          <div class="info-row"><dt>อีเมล</dt><dd><a href="mailto:sales@staluminum.co.th">sales@staluminum.co.th</a></dd></div>
+          <div class="info-row"><dt>พื้นที่ให้บริการ</dt><dd>กรุงเทพฯ ปริมณฑล และต่างจังหวัด</dd></div>
+          <div class="info-row"><dt>เวลาทำการ</dt><dd>จันทร์–เสาร์ 08:30–17:30 น.</dd></div>
+        </dl>
+        <p class="contact__note">ต้องการให้เข้าดูหน้างานเร็วเป็นพิเศษ แจ้งวันและช่วงเวลาที่สะดวกมาได้เลยครับ</p>
       </div>
-      <div class="service-card">
-        <div class="thumb" style="background-image:url('IMG_2517.PNG')"></div>
-        <div class="service-body"><h3>ประตู - หน้าต่าง อลูมิเนียม</h3><p>ติดตั้งประตูบานเลื่อน บานสวิง บานกระทุ้ง แข็งแรงทนทาน ปิดสนิทกันน้ำกันฝุ่นได้เป็นอย่างดี</p></div>
-      </div>
-      <div class="service-card">
-        <div class="thumb" style="background-image:url('IMG_2512.JPG')"></div>
-        <div class="service-body"><h3>กระจกระเบียง &amp; หลังคากระจก</h3><p>งานกั้นระเบียงกระจกใส/กระจกเทมเปอร์ รับแสงธรรมชาติ พร้อมโครงสร้างอลูมิเนียมแข็งแรง</p></div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="portfolio" id="portfolio">
-  <div class="container">
-    <div class="section-title">
-      <span>Our Portfolio</span>
-      <h2>ผลงานของเรา</h2>
-      <p>รวมตัวอย่างผลงานการติดตั้งประตู หน้าต่าง และงานกระจกอลูมิเนียมคุณภาพจากทีมงานอุดมพงษ์ (คลิกที่ภาพเพื่อดูขนาดเต็ม)</p>
-    </div>
-    <div class="gallery" id="gallery">
-      <figure data-src="IMG_2501.JPG"><div class="img" style="background-image:url('IMG_2501.JPG')"></div><figcaption>ผลงาน 01</figcaption></figure>
-      <figure data-src="IMG_2506.JPG"><div class="img" style="background-image:url('IMG_2506.JPG')"></div><figcaption>ผลงาน 02</figcaption></figure>
-      <figure data-src="IMG_2507.PNG"><div class="img" style="background-image:url('IMG_2507.PNG')"></div><figcaption>ผลงาน 03</figcaption></figure>
-      <figure data-src="IMG_2508.JPG"><div class="img" style="background-image:url('IMG_2508.JPG')"></div><figcaption>ผลงาน 04</figcaption></figure>
-      <figure data-src="IMG_2509.PNG"><div class="img" style="background-image:url('IMG_2509.PNG')"></div><figcaption>ผลงาน 05</figcaption></figure>
-      <figure data-src="IMG_2510.JPG"><div class="img" style="background-image:url('IMG_2510.JPG')"></div><figcaption>ผลงาน 06</figcaption></figure>
-      <figure data-src="IMG_2511.JPG"><div class="img" style="background-image:url('IMG_2511.JPG')"></div><figcaption>ผลงาน 07</figcaption></figure>
-      <figure data-src="IMG_2512.JPG"><div class="img" style="background-image:url('IMG_2512.JPG')"></div><figcaption>ผลงาน 08</figcaption></figure>
-      <figure data-src="IMG_2513.JPG"><div class="img" style="background-image:url('IMG_2513.JPG')"></div><figcaption>ผลงาน 09</figcaption></figure>
-      <figure data-src="IMG_2514.PNG"><div class="img" style="background-image:url('IMG_2514.PNG')"></div><figcaption>ผลงาน 10</figcaption></figure>
-      <figure data-src="IMG_2515.JPG"><div class="img" style="background-image:url('IMG_2515.JPG')"></div><figcaption>ผลงาน 11</figcaption></figure>
-      <figure data-src="IMG_2516.JPG"><div class="img" style="background-image:url('IMG_2516.JPG')"></div><figcaption>ผลงาน 12</figcaption></figure>
-      <figure data-src="IMG_2517.PNG"><div class="img" style="background-image:url('IMG_2517.PNG')"></div><figcaption>ผลงาน 13</figcaption></figure>
-      <figure data-src="IMG_2519.PNG"><div class="img" style="background-image:url('IMG_2519.PNG')"></div><figcaption>ผลงาน 14</figcaption></figure>
-      <figure data-src="IMG_2520.JPG"><div class="img" style="background-image:url('IMG_2520.JPG')"></div><figcaption>ผลงาน 15</figcaption></figure>
-      <figure data-src="IMG_2521.JPG"><div class="img" style="background-image:url('IMG_2521.JPG')"></div><figcaption>ผลงาน 16</figcaption></figure>
-      <figure data-src="IMG_2522.JPG"><div class="img" style="background-image:url('IMG_2522.JPG')"></div><figcaption>ผลงาน 17</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FAQ ===== -->
-<section id="faq">
-  <div class="container">
-    <div class="section-title">
-      <span>FAQ</span>
-      <h2>คำถามที่พบบ่อย</h2>
-      <p>รวมคำถามที่ลูกค้าสอบถามเข้ามาบ่อยที่สุดเกี่ยวกับงานกระจกและอลูมิเนียม</p>
-    </div>
-    <div class="faq-wrap">
-      <div class="faq-item">
-        <button class="faq-q">มีค่าใช้จ่ายในการเข้าไปวัดหน้างานหรือไม่?</button>
-        <div class="faq-a"><p>ไม่มีค่าใช้จ่ายครับ เราให้บริการเข้าวัดหน้างานและประเมินราคาฟรี พร้อมให้คำแนะนำเรื่องรูปแบบและวัสดุที่เหมาะกับพื้นที่ของคุณ เพียงนัดหมายล่วงหน้าผ่านโทรศัพท์หรือ LINE</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">งานติดตั้งใช้เวลานานแค่ไหน?</button>
-        <div class="faq-a"><p>ขึ้นอยู่กับขนาดงาน โดยทั่วไปงานประตู-หน้าต่างจำนวนไม่มากใช้เวลาติดตั้ง 1 วัน ส่วนงานกั้นห้องกระจกหรือกระจกระเบียงขนาดใหญ่ประมาณ 2-3 วัน ทั้งนี้ต้องรอผลิตชิ้นงานหลังวัดหน้างานประมาณ 7-14 วัน</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">กระจกเทมเปอร์กับกระจกธรรมดาต่างกันอย่างไร?</button>
-        <div class="faq-a"><p>กระจกเทมเปอร์ (Tempered) ผ่านการอบความร้อนสูง ทำให้แข็งแรงกว่ากระจกธรรมดา 4-5 เท่า และเมื่อแตกจะแตกเป็นเม็ดเล็กๆ ไม่มีคม ปลอดภัยกว่ามาก จึงเหมาะกับงานระเบียง ประตู และพื้นที่ที่มีคนสัญจร</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">ควรเลือกกระจกหนาเท่าไหร่?</button>
-        <div class="faq-a"><p>งานหน้าต่างทั่วไปนิยมใช้กระจก 5-6 มม. งานประตูบานเลื่อนและกั้นห้อง 8 มม. ส่วนงานระเบียงหรือกระจกบานใหญ่แนะนำ 10-12 มม. เพื่อความแข็งแรง ทีมงานจะแนะนำความหนาที่เหมาะสมตามหน้างานจริงให้อีกครั้ง</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">กระจกกันความร้อน / กันแสง UV มีให้เลือกไหม?</button>
-        <div class="faq-a"><p>มีครับ เรามีกระจกเขียวตัดแสง กระจกสะท้อนแสง และบริการติดฟิล์มกรองแสง ช่วยลดความร้อนเข้าบ้าน ประหยัดค่าแอร์ และช่วยถนอมเฟอร์นิเจอร์ไม่ให้ซีดจากแสงแดด</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">ประตู-หน้าต่างอลูมิเนียมกันน้ำรั่วซึมได้จริงหรือไม่?</button>
-        <div class="faq-a"><p>ได้ครับ หากติดตั้งอย่างถูกวิธี เราใช้ซิลิโคนเกรดคุณภาพและยางอัดขอบกระจกที่ได้มาตรฐาน พร้อมออกแบบรางระบายน้ำ ช่วยป้องกันน้ำฝนรั่วซึมและกันฝุ่นได้ดี</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">มีการรับประกันงานหรือไม่?</button>
-        <div class="faq-a"><p>มีครับ เรารับประกันงานติดตั้งและวัสดุตามเงื่อนไข หากพบปัญหาจากการติดตั้ง เช่น บานฝืด รางเลื่อนไม่ลื่น หรือรอยรั่วซึม สามารถแจ้งเข้ามาได้ ทีมงานจะเข้าไปแก้ไขให้</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">รับงานนอกพื้นที่ไหม และคิดค่าเดินทางอย่างไร?</button>
-        <div class="faq-a"><p>รับงานทั้งในพื้นที่และต่างจังหวัดครับ ค่าเดินทางขึ้นอยู่กับระยะทางและขนาดของงาน หากเป็นงานขนาดใหญ่มักไม่คิดค่าเดินทางเพิ่ม แนะนำให้แจ้งพื้นที่หน้างานเข้ามา เดี๋ยวเราประเมินให้ทันที</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="contact" style="background:var(--light)">
-  <div class="container">
-    <div class="section-title">
-      <span>Contact Us</span>
-      <h2>ติดต่อเรา</h2>
-      <p>ประเมินหน้างานฟรี หรือสอบถามรายละเอียดเพิ่มเติมได้ตลอดเวลา</p>
-    </div>
-    <div class="contact-wrap">
-      <div class="info-box">
-        <h3>ข้อมูลติดต่อ</h3>
-        <!-- <<< แก้เบอร์โทรที่ href="tel:0812345678" -->
-        <a class="contact-link" href="tel:0812345678">
-          <div class="ic">📞</div>
-          <div><h4>เบอร์โทรศัพท์</h4><p>081-234-5678 — กดเพื่อโทรทันที</p></div>
-        </a>
-        <!-- <<< แก้ LINE ID ที่ ~@udomphong (ต้องมี @ นำหน้า ถ้าเป็น LINE OA) -->
-        <a class="contact-link line" href="https://line.me/R/ti/p/~@udomphong" target="_blank" rel="noopener">
-          <div class="ic">💬</div>
-          <div><h4>LINE ID</h4><p>@udomphong — กดเพื่อเพิ่มเพื่อนทันที</p></div>
-        </a>
-        <p class="note">⏰ เปิดรับสายทุกวัน 08:00 - 18:00 น. | ตอบกลับทาง LINE ภายใน 1 ชั่วโมง</p>
-      </div>
-      <form onsubmit="alert('ส่งข้อมูลเรียบร้อย (เดโม)');return false;">
-        <input type="text" placeholder="ชื่อ-นามสกุล" required>
-        <input type="tel" placeholder="เบอร์โทรศัพท์" required>
-        <select>
-          <option>เลือกบริการที่สนใจ</option>
-          <option>กั้นห้องกระจก / บานสไลด์</option>
-          <option>ประตู - หน้าต่างอลูมิเนียม</option>
-          <option>กระจกระเบียง / หลังคากระจก</option>
-          <option>อื่น ๆ</option>
-        </select>
-        <textarea placeholder="รายละเอียดงานที่ต้องการ"></textarea>
-        <button type="submit" class="btn btn-primary">ส่งข้อความ</button>
+      <form class="form" id="quoteForm" novalidate>
+        <div class="form__row">
+          <div class="field">
+            <label for="fName">ชื่อ-นามสกุล</label>
+            <input id="fName" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="fPhone">เบอร์โทรศัพท์</label>
+            <input id="fPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required>
+          </div>
+        </div>
+        <div class="form__row">
+          <div class="field">
+            <label for="fEmail">อีเมล</label>
+            <input id="fEmail" name="email" type="email" autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="fService">งานที่สนใจ</label>
+            <select id="fService" name="service">
+              <option>กั้นห้องกระจก / บานสไลด์</option>
+              <option>ประตู - หน้าต่างอลูมิเนียม</option>
+              <option>ระเบียงกระจก / ราวกระจก</option>
+              <option>หลังคา / กันสาดกระจก</option>
+              <option>อื่น ๆ / ปรึกษาหน้างาน</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="fDetail">รายละเอียดงาน</label>
+          <textarea id="fDetail" name="detail" placeholder="ประเภทงาน ขนาดช่องเปิด สถานที่ติดตั้ง และวันที่สะดวกให้เข้าดูหน้างาน"></textarea>
+        </div>
+        <button type="submit" class="btn">ส่งคำขอใบเสนอราคา <span class="btn__arrow">→</span></button>
+        <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
       </form>
     </div>
   </div>
 </section>
 
-<footer>
-  <div class="container">
-    <div class="foot-grid">
+<!-- ============ FOOTER ============ -->
+<footer class="foundation">
+  <div class="shell">
+    <div class="foundation__grid">
       <div>
-        <div class="flogo"><b>อุดมพงษ์</b><small>อลูมิเนียม</small></div>
-        <p style="margin-top:12px">ศูนย์รวมงานติดตั้งกระจก อลูมิเนียม บานสไลด์ กั้นห้องกระจก โดยทีมช่างมืออาชีพ</p>
+        <a href="#home" class="brand">
+          <span class="brand__mark">ST</span>
+          <span class="brand__text">aluminum<small>Glass &amp; Aluminium</small></span>
+        </a>
+        <p class="foundation__desc">รับเหมาติดตั้งกระจกและอลูมิเนียมครบวงจร — วัดหน้างานฟรี ราคาชัดเจน รับประกันงานติดตั้ง 5 ปี</p>
+        <div class="foundation__meta">
+          <span class="foundation__badge">วัดหน้างานฟรี</span>
+          <span class="foundation__badge">ราคาชัดเจน</span>
+          <span class="foundation__badge">รับประกัน 5 ปี</span>
+        </div>
       </div>
+
       <div>
-        <h4>เมนูหลัก</h4>
+        <h4>เมนู</h4>
         <ul>
-          <li><a href="#home">หน้าแรก</a></li>
-          <li><a href="#services">บริการ</a></li>
-          <li><a href="#portfolio">ผลงาน</a></li>
+          <li><a href="#services">บริการของเรา</a></li>
+          <li><a href="#works">ผลงาน</a></li>
+          <li><a href="#process">ขั้นตอนการทำงาน</a></li>
           <li><a href="#faq">คำถามที่พบบ่อย</a></li>
-          <li><a href="#contact">ติดต่อ</a></li>
+          <li><a href="#contact">ขอใบเสนอราคา</a></li>
         </ul>
       </div>
+
       <div>
         <h4>ติดต่อ</h4>
         <ul>
-          <li>📞 <a href="tel:0812345678">081-234-5678</a></li>
-          <li>💬 <a href="https://line.me/R/ti/p/~@udomphong" target="_blank" rel="noopener">LINE: @udomphong</a></li>
+          <li><a href="tel:021234567">02-123-4567</a></li>
+          <li><a href="https://line.me/R/ti/p/~@staluminum" target="_blank" rel="noopener">LINE @staluminum</a></li>
+          <li><a href="mailto:sales@staluminum.co.th">sales@staluminum.co.th</a></li>
+          <li>จันทร์–เสาร์ 08:30–17:30 น.</li>
         </ul>
       </div>
     </div>
-    <div class="copyright">© 2026 อุดมพงษ์ อลูมิเนียม - รับติดตั้งงานกระจก อลูมิเนียม ครบวงจร</div>
+
+    <div class="foundation__base">
+      <span>© 2026 ST aluminum — รับเหมาติดตั้งกระจก อลูมิเนียม</span>
+      <span>กรุงเทพฯ · ปริมณฑล · ต่างจังหวัด</span>
+    </div>
   </div>
 </footer>
 
-<div class="float-stack">
-  <a href="https://line.me/R/ti/p/~@udomphong" target="_blank" rel="noopener" class="float-btn fb-line" title="แอดไลน์">💬</a>
-  <a href="tel:0812345678" class="float-btn fb-call" title="โทรหาเรา">📞</a>
+<div class="dock">
+  <a href="https://line.me/R/ti/p/~@staluminum" target="_blank" rel="noopener" aria-label="แชทผ่าน LINE">LINE</a>
+  <a href="tel:021234567" aria-label="โทรหา ST aluminum">CALL</a>
 </div>
 
-<div class="lightbox" id="lightbox">
-  <span class="close" onclick="closeBox()">&times;</span>
-  <span class="arrow prev" onclick="nav(-1,event)">&#10094;</span>
-  <img id="lbImg" src="" alt="ผลงาน">
-  <span class="arrow next" onclick="nav(1,event)">&#10095;</span>
+<!-- ============ LIGHTBOX ============ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="ดูภาพผลงานขนาดเต็ม">
+  <button class="lightbox__close" type="button" data-lb-close aria-label="ปิด">✕</button>
+  <button class="lightbox__arrow lightbox__arrow--prev" type="button" data-lb-step="-1" aria-label="ภาพก่อนหน้า">←</button>
+  <img id="lbImage" alt="">
+  <button class="lightbox__arrow lightbox__arrow--next" type="button" data-lb-step="1" aria-label="ภาพถัดไป">→</button>
+  <p class="lightbox__cap" id="lbCap"></p>
 </div>
 
-<script>
-  document.querySelectorAll('a[href^="#"]').forEach(a=>{
-    a.addEventListener('click',e=>{
-      const t=document.querySelector(a.getAttribute('href'));
-      if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});
-      document.getElementById('navLinks').classList.remove('open');}
-    });
-  });
-
-  document.querySelectorAll('.faq-q').forEach(q=>{
-    q.addEventListener('click',()=>{
-      const item=q.parentElement, isOpen=item.classList.contains('active');
-      document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('active'));
-      if(!isOpen) item.classList.add('active');
-    });
-  });
-
-  const figs=[...document.querySelectorAll('#gallery figure')];
-  const box=document.getElementById('lightbox'), lbImg=document.getElementById('lbImg');
-  let idx=0;
-  figs.forEach((f,i)=>f.addEventListener('click',()=>{idx=i;lbImg.src=f.dataset.src;box.classList.add('open');}));
-  function closeBox(){box.classList.remove('open');}
-  function nav(d,e){e.stopPropagation();idx=(idx+d+figs.length)%figs.length;lbImg.src=figs[idx].dataset.src;}
-  box.addEventListener('click',e=>{if(e.target===box)closeBox();});
-  document.addEventListener('keydown',e=>{
-    if(!box.classList.contains('open'))return;
-    if(e.key==='Escape')closeBox();
-    if(e.key==='ArrowRight')nav(1,e);
-    if(e.key==='ArrowLeft')nav(-1,e);
-  });
-</script>
+<script src="assets/js/site.js"></script>
 </body>
 </html>
