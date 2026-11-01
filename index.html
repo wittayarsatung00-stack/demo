@@ -3,530 +3,191 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ทรัพย์ไพศาล อลูมิเนียม | รับติดตั้งงานกระจก อลูมิเนียม ครบวงจร</title>
-<meta name="description" content="รับติดตั้งกระจกอลูมิเนียม กั้นห้อง กระจกเทมเปอร์ มุ้งลวด ระเบียงกั้นตก ประตูรางแขวน บานเลื่อน บานสวิง ฉากกั้นห้องน้ำ ฝ้าฉาบเรียบ ฝ้าทีบาร์">
+<title>อุดมพงษ์ อลูมิเนียม | รับติดตั้งงานกระจก อลูมิเนียม ครบวงจร</title>
+<meta name="description" content="รับออกแบบและติดตั้งบานสไลด์มินิมอล กั้นห้องกระจก ประตู-หน้าต่างอลูมิเนียม งานกระจกระเบียง โดยทีมช่างมืออาชีพ">
 <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
 <style>
-  :root {
-    --primary: #8b1d1d;
-    --primary-dark: #5c1010;
-    --accent: #e64a19; /* ส้มอิฐสว่าง โทนเดียวกับปุ่มและไฮไลต์ */
-    --accent-hover: #d84315;
-    --dark: #212529;
-    --gray: #6c757d;
-    --light-bg: #f8f9fa;
-    --radius: 12px;
-    --shadow: 0 6px 24px rgba(0,0,0,.08);
+  :root{
+    --primary:#1c3f5e;
+    --primary-dark:#14304a;
+    --accent:#3fa9c9;
+    --dark:#1a1a1a;
+    --gray:#6b7280;
+    --light:#f4f7f9;
+    --radius:12px;
+    --shadow:0 6px 24px rgba(0,0,0,.09);
   }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Prompt',sans-serif;color:var(--dark);line-height:1.75;background:#fff}
+  a{text-decoration:none;color:inherit}
+  img{max-width:100%;display:block}
+  .container{max-width:1180px;margin:0 auto;padding:0 20px}
+  .btn{display:inline-block;padding:13px 30px;border-radius:var(--radius);font-weight:500;transition:.3s;cursor:pointer;border:none;font-family:inherit;font-size:1rem}
+  .btn-primary{background:var(--accent);color:#fff;box-shadow:0 6px 18px rgba(63,169,201,.35)}
+  .btn-primary:hover{background:#2e8fad;transform:translateY(-2px)}
+  .btn-outline{border:2px solid rgba(255,255,255,.85);color:#fff;background:rgba(255,255,255,.08);backdrop-filter:blur(4px)}
+  .btn-outline:hover{background:#fff;color:var(--primary)}
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Prompt', sans-serif; color: var(--dark); line-height: 1.75; background: #fff; }
-  a { text-decoration: none; color: inherit; }
-  img { max-width: 100%; display: block; }
-  .container { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+  .topbar{background:var(--primary-dark);color:#fff;font-size:.87rem;padding:8px 0}
+  .topbar .container{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  .topbar a:hover{color:var(--accent)}
 
-  /* Section Common Titles */
-  .section-title {
-    text-align: center;
-    margin-bottom: 45px;
-  }
-  .section-title span {
-    color: var(--accent);
-    font-size: 0.88rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-weight: 700;
-  }
-  .section-title h2 {
-    font-size: 2.1rem;
-    font-weight: 700;
-    color: var(--dark);
-    margin: 8px 0 12px;
-  }
-  .section-title p {
-    color: var(--gray);
-    max-width: 620px;
-    margin: 0 auto;
-    font-size: 0.98rem;
-  }
+  header{background:#fff;box-shadow:var(--shadow);position:sticky;top:0;z-index:1000}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+  .logo{display:flex;flex-direction:column;line-height:1.15}
+  .logo b{font-size:1.45rem;color:var(--primary);font-weight:700}
+  .logo small{font-size:.85rem;color:var(--accent);letter-spacing:1px}
+  .nav-links{display:flex;gap:28px;list-style:none}
+  .nav-links a{font-weight:500;transition:.2s}
+  .nav-links a:hover{color:var(--accent)}
+  .menu-btn{display:none;font-size:1.6rem;background:none;border:none;cursor:pointer}
 
-  /* Topbar */
-  .topbar { background: var(--primary-dark); color: #fff; font-size: .87rem; padding: 8px 0; }
-  .topbar .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
-  .topbar a { color: #fff; transition: color 0.2s; }
-  .topbar a:hover { color: #ff8a75; }
+  /* ===== HERO : ข้อความชิดซ้าย + เห็นภาพพื้นหลัง ===== */
+  .hero{
+    position:relative;min-height:90vh;display:flex;align-items:center;color:#fff;
+    background:url('IMG_2501.JPG') center center/cover no-repeat;
+    padding:100px 0;overflow:hidden;
+  }
+  .hero::before{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(100deg,
+      rgba(14,32,50,.92) 0%,
+      rgba(14,32,50,.80) 32%,
+      rgba(14,32,50,.45) 58%,
+      rgba(14,32,50,.15) 100%);
+  }
+  .hero::after{
+    content:'';position:absolute;inset:auto 0 0 0;height:120px;
+    background:linear-gradient(transparent,rgba(255,255,255,.12));
+  }
+  .hero .container{position:relative;z-index:2}
+  .hero-inner{max-width:660px;text-align:left;border-left:4px solid var(--accent);padding-left:28px}
+  .hero .eyebrow{display:inline-block;background:rgba(63,169,201,.22);border:1px solid rgba(255,255,255,.45);padding:6px 18px;border-radius:30px;font-size:.9rem;margin-bottom:20px;backdrop-filter:blur(6px)}
+  .hero h1{font-size:3.1rem;font-weight:700;line-height:1.25;margin-bottom:20px;text-shadow:0 3px 20px rgba(0,0,0,.55)}
+  .hero h1 em{font-style:normal;color:var(--accent)}
+  .hero p{font-size:1.08rem;margin-bottom:34px;opacity:.95;text-shadow:0 2px 10px rgba(0,0,0,.5)}
+  .hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-mini{display:flex;gap:26px;margin-top:38px;flex-wrap:wrap;font-size:.9rem;opacity:.92}
+  .hero-mini div b{display:block;font-size:1.6rem;color:var(--accent);line-height:1.2}
 
-  /* Header & Navigation */
-  header { background: #fff; box-shadow: var(--shadow); position: sticky; top: 0; z-index: 1000; }
-  .nav { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; }
-  
-  .logo-brand { display: flex; align-items: center; gap: 12px; }
-  .logo-img {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid var(--accent);
-    box-shadow: 0 2px 8px rgba(0,0,0,.15);
-  }
-  .logo-text { display: flex; flex-direction: column; line-height: 1.15; }
-  .logo-text b { font-size: 1.35rem; color: var(--primary); font-weight: 700; }
-  .logo-text small { font-size: .85rem; color: var(--accent); letter-spacing: 1px; font-weight: 600; }
+  section{padding:80px 0}
+  .section-title{text-align:center;margin-bottom:50px}
+  .section-title span{color:var(--accent);font-size:.9rem;letter-spacing:2px;text-transform:uppercase;font-weight:500}
+  .section-title h2{font-size:2rem;font-weight:600;margin:6px 0 10px}
+  .section-title p{color:var(--gray);max-width:680px;margin:0 auto}
 
-  .nav-links { display: flex; gap: 28px; list-style: none; }
-  .nav-links a { font-weight: 500; transition: color .2s; }
-  .nav-links a:hover { color: var(--accent); }
-  .menu-btn { display: none; font-size: 1.6rem; background: none; border: none; cursor: pointer; color: var(--dark); }
+  .features{background:var(--light)}
+  .grid-4{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:26px}
+  .feature-card{background:#fff;padding:32px 24px;border-radius:var(--radius);text-align:center;box-shadow:var(--shadow);transition:.3s}
+  .feature-card:hover{transform:translateY(-6px)}
+  .feature-card .icon{font-size:2.3rem;margin-bottom:12px}
+  .feature-card h3{font-size:1.08rem;margin-bottom:6px}
+  .feature-card p{color:var(--gray);font-size:.92rem}
 
-  /* Buttons */
-  .btn { display: inline-block; padding: 13px 30px; border-radius: var(--radius); font-weight: 500; transition: .3s; cursor: pointer; border: none; font-family: inherit; font-size: 1rem; }
-  .btn-primary { background: var(--accent); color: #fff; box-shadow: 0 6px 18px rgba(230, 74, 25, .35); }
-  .btn-primary:hover { background: var(--accent-hover); transform: translateY(-2px); }
-  .btn-outline { border: 2px solid rgba(255,255,255,.85); color: #fff; background: rgba(255,255,255,.08); backdrop-filter: blur(4px); }
-  .btn-outline:hover { background: #fff; color: var(--primary); }
+  .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:28px}
+  .service-card{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:#fff;transition:.3s}
+  .service-card:hover{transform:translateY(-6px)}
+  .service-card .thumb{height:220px;background-size:cover;background-position:center}
+  .service-body{padding:24px}
+  .service-body h3{font-size:1.15rem;margin-bottom:10px;color:var(--primary)}
+  .service-body p{color:var(--gray);font-size:.94rem}
 
-  /* ===== HERO SECTION ===== */
-  .hero {
-    position: relative;
-    min-height: 90vh;
-    display: flex;
-    align-items: center;
-    color: #fff;
-    background: url('Hero.jpg') center center/cover no-repeat;
-    padding: 100px 0;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(100deg,
-      rgba(20, 8, 8, 0.92) 0%,
-      rgba(40, 12, 12, 0.82) 38%,
-      rgba(15, 23, 42, 0.50) 70%,
-      rgba(0, 0, 0, 0.25) 100%);
-  }
-  .hero .container { position: relative; z-index: 2; }
-  .hero-inner { max-width: 720px; text-align: left; border-left: 4px solid var(--accent); padding-left: 28px; }
-  .hero .eyebrow { display: inline-block; background: rgba(230, 74, 25, 0.25); border: 1px solid rgba(255,255,255,.45); padding: 6px 18px; border-radius: 30px; font-size: .9rem; margin-bottom: 20px; backdrop-filter: blur(6px); }
-  .hero h1 { font-size: 2.8rem; font-weight: 700; line-height: 1.25; margin-bottom: 20px; text-shadow: 0 3px 20px rgba(0,0,0,.55); }
-  .hero h1 em { font-style: normal; color: #ff8a75; }
-  .hero p { font-size: 1.05rem; margin-bottom: 34px; opacity: .95; text-shadow: 0 2px 10px rgba(0,0,0,.5); line-height: 1.8; }
-  .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
-  .hero-mini { display: flex; gap: 26px; margin-top: 38px; flex-wrap: wrap; font-size: .9rem; opacity: .92; }
-  .hero-mini div b { display: block; font-size: 1.6rem; color: #ff8a75; line-height: 1.2; }
+  .portfolio{background:var(--light)}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+  .gallery figure{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);cursor:pointer;background:#fff}
+  .gallery .img{height:230px;background-size:cover;background-position:center;transition:.4s}
+  .gallery figure:hover .img{transform:scale(1.07)}
+  .gallery figcaption{position:absolute;inset:auto 0 0 0;padding:10px 14px;font-size:.9rem;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.7));opacity:0;transition:.3s}
+  .gallery figure:hover figcaption{opacity:1}
 
-  .service-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
-  .tag { background: rgba(255,255,255,0.15); padding: 4px 12px; border-radius: 6px; font-size: 0.85rem; backdrop-filter: blur(4px); }
+  .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;place-items:center;z-index:2000;padding:20px}
+  .lightbox.open{display:grid}
+  .lightbox img{max-width:92vw;max-height:88vh;border-radius:8px}
+  .lightbox .close{position:absolute;top:18px;right:26px;color:#fff;font-size:2.4rem;cursor:pointer;line-height:1}
+  .lightbox .arrow{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:2.6rem;cursor:pointer;padding:10px 18px;user-select:none}
+  .lightbox .prev{left:10px}
+  .lightbox .next{right:10px}
 
-  /* ===== SERVICES SECTION ===== */
-  .services-section {
-    background: var(--light-bg);
-    padding: 80px 20px;
-  }
-  .grid-services {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 24px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  .service-card {
-    background: #ffffff;
-    border-radius: 18px;
-    padding: 14px;
-    border: 1px solid #e9ecef;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-  }
-  .service-card:hover {
-    transform: translateY(-6px);
-    border-color: var(--accent);
-    box-shadow: 0 12px 28px rgba(230, 74, 25, 0.12);
-  }
-  .service-img-box {
-    width: 100%;
-    height: 240px;
-    border-radius: 12px;
-    overflow: hidden;
-    margin-bottom: 16px;
-    background-color: #f1f3f5;
-  }
-  .service-img-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    transition: transform 0.4s ease;
-  }
-  .service-card:hover .service-img-box img {
-    transform: scale(1.05);
-  }
-  .service-content {
-    padding: 4px 6px 12px;
-  }
-  .service-content h3 {
-    font-size: 1.15rem;
-    color: var(--dark);
-    margin-bottom: 8px;
-    font-weight: 700;
-  }
-  .service-content p {
-    color: #495057;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    margin: 0;
-  }
+  /* ===== FAQ ===== */
+  .faq-wrap{max-width:860px;margin:0 auto;display:grid;gap:14px}
+  .faq-item{background:#fff;border:1px solid #e5eaee;border-radius:var(--radius);overflow:hidden;transition:.3s}
+  .faq-item.active{border-color:var(--accent);box-shadow:var(--shadow)}
+  .faq-q{width:100%;text-align:left;background:none;border:none;font-family:inherit;font-size:1rem;font-weight:500;
+         padding:18px 22px;cursor:pointer;display:flex;justify-content:space-between;gap:16px;align-items:center;color:var(--primary)}
+  .faq-q::after{content:'+';font-size:1.5rem;color:var(--accent);transition:.3s;flex-shrink:0}
+  .faq-item.active .faq-q::after{content:'−'}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s}
+  .faq-a p{padding:0 22px 20px;color:var(--gray);font-size:.95rem}
+  .faq-item.active .faq-a{max-height:400px}
 
-  /* ===== GALLERY SECTION ===== */
-  .portfolio-section {
-    background: #ffffff;
-    padding: 80px 20px;
-  }
-  .filter-menu {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 40px;
-  }
-  .filter-btn {
-    background: #f1f3f5;
-    color: #495057;
-    border: none;
-    padding: 10px 22px;
-    border-radius: 30px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: inherit;
-  }
-  .filter-btn:hover, .filter-btn.active {
-    background: var(--accent);
-    color: #ffffff;
-    box-shadow: 0 4px 12px rgba(230, 74, 25, 0.25);
-  }
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  .gallery-item {
-    transition: all 0.4s ease;
-  }
-  .gallery-item .img-box {
-    position: relative;
-    width: 100%;
-    height: 260px;
-    border-radius: 16px;
-    overflow: hidden;
-    background: #f8f9fa;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
-  }
-  .gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    transition: transform 0.5s ease;
-  }
-  .img-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(230, 74, 25, 0.85) 100%);
-    display: flex;
-    align-items: flex-end;
-    padding: 20px;
-    opacity: 0;
-    transition: opacity 0.35s ease;
-  }
-  .img-overlay span {
-    color: #ffffff;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transform: translateY(10px);
-    transition: transform 0.35s ease;
-  }
-  .gallery-item:hover img {
-    transform: scale(1.08);
-  }
-  .gallery-item:hover .img-overlay {
-    opacity: 1;
-  }
-  .gallery-item:hover .img-overlay span {
-    transform: translateY(0);
-  }
+  .contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+  .info-box{background:var(--light);padding:32px;border-radius:var(--radius)}
+  .info-box h3{margin-bottom:20px;color:var(--primary)}
+  .contact-link{display:flex;gap:16px;align-items:center;background:#fff;padding:18px 20px;border-radius:var(--radius);
+                margin-bottom:16px;box-shadow:var(--shadow);transition:.3s;border-left:4px solid var(--accent)}
+  .contact-link:hover{transform:translateX(5px);border-left-color:var(--primary)}
+  .contact-link .ic{font-size:1.6rem}
+  .contact-link h4{font-size:.95rem;margin-bottom:0;color:var(--primary)}
+  .contact-link p{color:var(--gray);font-size:.95rem;margin:0}
+  .contact-link.line{border-left-color:#06C755}
+  .contact-link.line:hover{border-left-color:#04a548}
+  .note{font-size:.87rem;color:var(--gray);margin-top:8px}
+  form{display:grid;gap:14px}
+  input,textarea,select{padding:13px;border:1px solid #ddd;border-radius:var(--radius);font-family:inherit;font-size:.95rem}
+  input:focus,textarea:focus,select:focus{outline:2px solid var(--accent);border-color:transparent}
+  textarea{resize:vertical;min-height:130px}
 
-  /* ===== FAQ SECTION ===== */
-  .faq-section {
-    background: var(--light-bg);
-    padding: 80px 20px;
-  }
-  .faq-container {
-    max-width: 800px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-  .faq-item {
-    background: #ffffff;
-    border-radius: 14px;
-    border: 1px solid #e9ecef;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-    overflow: hidden;
-    transition: all 0.3s ease;
-  }
-  .faq-item[open] {
-    border-color: var(--accent);
-  }
-  .faq-question {
-    padding: 20px 24px;
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: var(--dark);
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    list-style: none;
-  }
-  .faq-question::-webkit-details-marker { display: none; }
-  .faq-icon {
-    font-size: 1.4rem;
-    color: var(--accent);
-    transition: transform 0.3s ease;
-  }
-  .faq-item[open] .faq-icon {
-    transform: rotate(45deg);
-  }
-  .faq-answer {
-    padding: 0 24px 20px;
-    color: #495057;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    border-top: 1px dashed #f1f3f5;
-    margin-top: 5px;
-    padding-top: 15px;
-  }
+  footer{background:var(--primary-dark);color:#c7d3dd;padding:56px 0 22px;font-size:.93rem}
+  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr;gap:36px;margin-bottom:32px}
+  footer h4{color:#fff;margin-bottom:14px;font-size:1rem}
+  footer .flogo b{display:block;font-size:1.3rem;color:#fff}
+  footer .flogo small{color:var(--accent);letter-spacing:1px}
+  footer ul{list-style:none}
+  footer li{margin-bottom:8px}
+  footer a:hover{color:var(--accent)}
+  .copyright{border-top:1px solid rgba(255,255,255,.15);padding-top:18px;text-align:center;font-size:.86rem}
 
-  /* ===== CONTACT SECTION ===== */
-  .contact-section {
-    background: #ffffff;
-    padding: 80px 20px;
-  }
-  .contact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  .contact-card {
-    background: var(--light-bg);
-    border-radius: 20px;
-    padding: 32px 28px;
-    border: 1px solid #e9ecef;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.04);
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  }
-  .contact-item {
-    display: flex;
-    gap: 18px;
-    align-items: flex-start;
-  }
-  .contact-icon {
-    font-size: 1.8rem;
-    background: #ffffff;
-    width: 54px;
-    height: 54px;
-    display: grid;
-    place-items: center;
-    border-radius: 14px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    flex-shrink: 0;
-  }
-  .contact-detail h3 {
-    font-size: 1.1rem;
-    color: var(--dark);
-    margin: 0 0 4px;
-    font-weight: 700;
-  }
-  .contact-detail p {
-    color: var(--gray);
-    font-size: 0.88rem;
-    margin: 0 0 10px;
-  }
-  .phone-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  .btn-link {
-    display: inline-block;
-    background: #ffffff;
-    color: var(--accent);
-    border: 1.5px solid var(--accent);
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-weight: 700;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-  }
-  .btn-link:hover {
-    background: var(--accent);
-    color: #ffffff;
-  }
-  .line-btn {
-    display: inline-block;
-    background: #06c755;
-    color: #ffffff;
-    padding: 10px 18px;
-    border-radius: 25px;
-    font-weight: 700;
-    font-size: 0.9rem;
-    box-shadow: 0 4px 12px rgba(6, 199, 85, 0.25);
-    transition: all 0.3s ease;
-  }
-  .line-btn:hover {
-    background: #05b34c;
-    transform: translateY(-2px);
-  }
-  .fb-links {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .btn-link-fb {
-    display: inline-block;
-    background: #1877f2;
-    color: #ffffff;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 0.88rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
-  }
-  .btn-link-fb:hover {
-    background: #166fe5;
-    transform: translateY(-2px);
-  }
-  .guarantee-box {
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 16px;
-    border-left: 4px solid var(--accent);
-    display: flex;
-    gap: 14px;
-    align-items: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-  }
-  .shield-icon { font-size: 2.2rem; }
-  .guarantee-box h4 {
-    margin: 0 0 4px;
-    color: var(--dark);
-    font-size: 1rem;
-    font-weight: 700;
-  }
-  .guarantee-box p {
-    margin: 0;
-    color: var(--gray);
-    font-size: 0.85rem;
-  }
-  .map-box {
-    background: #ffffff;
-    padding: 24px;
-    border-radius: 16px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .map-box h3 { margin: 0 0 6px; color: var(--dark); font-size: 1.15rem; }
-  .map-box p { color: var(--gray); font-size: 0.9rem; margin-bottom: 18px; }
-  .map-btn {
-    display: inline-block;
-    background: var(--accent);
-    color: #ffffff;
-    padding: 12px 24px;
-    border-radius: 30px;
-    font-weight: 700;
-    box-shadow: 0 4px 14px rgba(230, 74, 25, 0.3);
-    transition: all 0.3s ease;
-  }
-  .map-btn:hover {
-    background: var(--accent-hover);
-    transform: translateY(-2px);
-  }
+  .float-stack{position:fixed;right:20px;bottom:20px;display:grid;gap:12px;z-index:999}
+  .float-btn{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font-size:1.5rem;color:#fff;
+             box-shadow:0 4px 14px rgba(0,0,0,.25);transition:.3s}
+  .float-btn:hover{transform:scale(1.1)}
+  .fb-call{background:var(--accent)}
+  .fb-line{background:#06C755}
 
-  /* Footer */
-  .footer {
-    background: var(--dark);
-    color: #adb5bd;
-    text-align: center;
-    padding: 24px;
-    font-size: 0.88rem;
+  @media(max-width:900px){
+    .contact-wrap{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .hero h1{font-size:2.4rem}
   }
-
-  /* Responsive Mobile Menu */
-  @media(max-width: 768px) {
-    .menu-btn { display: block; }
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      background: #ffffff;
-      padding: 20px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-      gap: 16px;
-    }
-    .nav-links.open { display: flex; }
-    .hero { min-height: 80vh; padding: 70px 0; }
-    .hero h1 { font-size: 1.8rem; }
-    .hero-inner { padding-left: 16px; border-left-width: 3px; }
+  @media(max-width:640px){
+    .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:18px;gap:14px;box-shadow:var(--shadow)}
+    .nav-links.open{display:flex}
+    .menu-btn{display:block}
+    .hero{min-height:80vh;padding:70px 0}
+    .hero::before{background:linear-gradient(rgba(14,32,50,.85),rgba(14,32,50,.7))}
+    .hero-inner{padding-left:18px;border-left-width:3px}
+    .hero h1{font-size:1.9rem}
+    .hero-mini{gap:18px}
+    .foot-grid{grid-template-columns:1fr}
+    .gallery{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+    .gallery .img{height:160px}
   }
 </style>
 </head>
 <body>
 
-<!-- Topbar -->
 <div class="topbar">
   <div class="container">
-    <span>📞 <a href="tel:0984060642">098-406-0642</a> | <a href="tel:0891065131">089-106-5131</a> | <a href="tel:0810764923">081-076-4923</a> &nbsp;|&nbsp; 💬 ประเมินราคาหน้างานฟรี</span>
-    <span>ทรัพย์ไพศาล อลูมิเนium (S.P.S.)</span>
+    <!-- <<< แก้เบอร์โทรตรง href="tel:0812345678" และข้อความ -->
+    <span>📞 <a href="tel:0812345678">081-234-5678</a> &nbsp;|&nbsp;
+    💬 <a href="https://line.me/R/ti/p/~@udomphong" target="_blank" rel="noopener">LINE: @udomphong</a></span>
+    <span>ปรึกษา / ประเมินราคาฟรี</span>
   </div>
 </div>
 
-<!-- Header -->
 <header>
   <div class="container nav">
-    <a href="#home" class="logo-brand">
-      <img src="LOGO.jpg" alt="ทรัพย์ไพศาล อลูมิเนียม S.P.S." class="logo-img">
-      <div class="logo-text">
-        <b>ทรัพย์ไพศาล</b>
-        <small>อลูมิเนียม (S.P.S.)</small>
-      </div>
-    </a>
-    
+    <a href="#home" class="logo"><b>อุดมพงษ์</b><small>อลูมิเนียม</small></a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#home">หน้าแรก</a></li>
       <li><a href="#services">บริการของเรา</a></li>
@@ -538,297 +199,244 @@
   </div>
 </header>
 
-<!-- Hero Section -->
 <section class="hero" id="home">
   <div class="container">
     <div class="hero-inner">
-      <span class="eyebrow">รับออกแบบและติดตั้ง โดยทีมช่างมืออาชีพ</span>
-      <h1>ศูนย์รวมงาน<em>กระจก อลูมิเนียม</em><br>และงานฝ้าครบวงจร</h1>
-      
-      <div class="service-tags">
-        <span class="tag">กระจกอลูมิเนียม</span>
-        <span class="tag">กั้นห้อง</span>
-        <span class="tag">กระจกเทมเปอร์</span>
-        <span class="tag">มุ้งลวด</span>
-        <span class="tag">ระเบียงกั้นตก</span>
-        <span class="tag">ประตูรางแขวน</span>
-        <span class="tag">บานเลื่อน / บานสวิง</span>
-        <span class="tag">ฉากกั้นห้องน้ำ</span>
-        <span class="tag">ฝ้าฉาบเรียบ / ฝ้าทีบาร์</span>
-      </div>
-
-      <p>บริการรับติดตั้งกระจกอลูมิเนียม กั้นห้อง ประตู-หน้าต่าง บานเลื่อน บานสวิง ฉากกั้นห้องน้ำ งานระเบียง และงานฝ้าทุกชนิด เน้นงานประณีต แข็งแรง ทนทาน ในราคาที่เป็นกันเอง</p>
-      
+      <span class="eyebrow">ติดตั้งมาตรฐาน เน้นคุณภาพงาน</span>
+      <h1>ศูนย์รวมงาน<br><em>กระจก อลูมิเนียม</em><br>ครบวงจร</h1>
+      <p>รับออกแบบและติดตั้งบานสไลด์มินิมอล กั้นห้องกระจก ประตู-หน้าต่างอลูมิเนียม และงานกระจกระเบียง โดยทีมช่างมืออาชีพ พร้อมวัสดุคุณภาพสูง</p>
       <div class="hero-btns">
-        <a href="#contact" class="btn btn-primary">ปรึกษา / ประเมินราคาฟรี</a>
-        <a href="#services" class="btn btn-outline">ดูบริการทั้งหมด</a>
+        <a href="#contact" class="btn btn-primary">ปรึกษาประเมินราคาฟรี</a>
+        <a href="#services" class="btn btn-outline">ดูบริการของเรา</a>
       </div>
-      
       <div class="hero-mini">
-        <div><b>100%</b> ประณีตใส่ใจคุณภาพ</div>
-        <div><b>ฟรี</b> ประเมินหน้างาน</div>
-        <div><b>10+ ปี</b> ประสบการณ์ช่าง</div>
+        <div><b>100%</b>วัสดุเกรดพรีเมียม</div>
+        <div><b>ฟรี</b>ประเมินหน้างาน</div>
+        <div><b>รับประกัน</b>บริการหลังการขาย</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Services Section -->
-<section id="services" class="services-section">
+<section class="features">
+  <div class="container">
+    <div class="grid-4">
+      <div class="feature-card"><div class="icon">🏅</div><h3>คุณภาพมาตรฐาน</h3><p>วัสดุเกรดพรีเมียม ทนทาน</p></div>
+      <div class="feature-card"><div class="icon">⏱️</div><h3>ตรงเวลา</h3><p>นัดหมายชัดเจน ส่งงานตามกำหนด</p></div>
+      <div class="feature-card"><div class="icon">👷</div><h3>ทีมช่างมืออาชีพ</h3><p>ประสบการณ์ติดตั้งงานกระจก</p></div>
+      <div class="feature-card"><div class="icon">🤝</div><h3>บริการหลังการขาย</h3><p>ดูแลและแก้ไขปัญหาหลังติดตั้ง</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
   <div class="container">
     <div class="section-title">
       <span>Our Services</span>
       <h2>บริการของเรา</h2>
-      <p>บริการออกแบบและติดตั้งงานกระจก อลูมิเนียม และงานฝ้าครบวงจร โดยทีมช่างมืออาชีพ</p>
+      <p>บริการออกแบบและติดตั้งกระจกอลูมิเนียมคุณภาพสูง สำหรับบ้านพักอาศัย และอาคารพาณิชย์</p>
     </div>
-
-    <div class="grid-services">
+    <div class="grid-3">
       <div class="service-card">
-        <div class="service-img-box">
-          <img src="ประตู.jpg" alt="ประตู - หน้าต่าง อลูมิเนียม">
-        </div>
-        <div class="service-content">
-          <h3>ประตู - หน้าต่าง อลูมิเนียม</h3>
-          <p>ติดตั้งประตูบานเลื่อน บานสวิง บานกระทุ้ง และบานรางแขวน แข็งแรง ทนทาน ปิดสนิทกันน้ำกันฝุ่นได้เป็นอย่างดี</p>
-        </div>
+        <div class="thumb" style="background-image:url('IMG_2516.JPG')"></div>
+        <div class="service-body"><h3>กั้นห้องกระจก &amp; บานสไลด์</h3><p>กั้นห้องเพิ่มพื้นที่ใช้สอยให้เป็นสัดส่วน โปร่ง สบายตา เหมาะสำหรับบ้าน คอนโด และออฟฟิศ</p></div>
       </div>
-
       <div class="service-card">
-        <div class="service-img-box">
-          <img src="บริการของเรากั้นห้อง.jpg" alt="กั้นห้องกระจก & บานสไลด์">
-        </div>
-        <div class="service-content">
-          <h3>กั้นห้องกระจก & บานสไลด์</h3>
-          <p>กั้นห้องเพิ่มพื้นที่ใช้สอยให้เป็นสัดส่วน โปร่ง สบายตา เหมาะสำหรับบ้าน ออฟฟิศ และร้านค้า</p>
-        </div>
+        <div class="thumb" style="background-image:url('IMG_2517.PNG')"></div>
+        <div class="service-body"><h3>ประตู - หน้าต่าง อลูมิเนียม</h3><p>ติดตั้งประตูบานเลื่อน บานสวิง บานกระทุ้ง แข็งแรงทนทาน ปิดสนิทกันน้ำกันฝุ่นได้เป็นอย่างดี</p></div>
       </div>
-
       <div class="service-card">
-        <div class="service-img-box">
-          <img src="ระเบียง1.jpg" alt="ระเบียงกันตก & กระจกเทมเปอร์">
-        </div>
-        <div class="service-content">
-          <h3>ระเบียงกันตก & กระจกเทมเปอร์</h3>
-          <p>งานระเบียงกระจกใส/กระจกเทมเปอร์ เพิ่มความหรูหรา มองเห็นวิวได้กว้าง พร้อมโครงสร้างอลูมิเนียมแข็งแรง</p>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="service-img-box">
-          <img src="other2.jpg" alt="ฉากกั้นห้องน้ำ & บริการอื่น ๆ">
-        </div>
-        <div class="service-content">
-          <h3>ฉากกั้นห้องน้ำ & บริการอื่น ๆ</h3>
-          <p>ติดตั้งฉากกั้นห้องน้ำกระจกเทมเปอร์นิรภัย งานฝ้าฉาบเรียบ/ฝ้าทีบาร์ และงานกระจกสั่งทำพิเศษตามขนาดหน้างาน</p>
-        </div>
+        <div class="thumb" style="background-image:url('IMG_2512.JPG')"></div>
+        <div class="service-body"><h3>กระจกระเบียง &amp; หลังคากระจก</h3><p>งานกั้นระเบียงกระจกใส/กระจกเทมเปอร์ รับแสงธรรมชาติ พร้อมโครงสร้างอลูมิเนียมแข็งแรง</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Portfolio Section -->
-<section id="portfolio" class="portfolio-section">
+<section class="portfolio" id="portfolio">
   <div class="container">
     <div class="section-title">
-      <span>Our Works</span>
+      <span>Our Portfolio</span>
       <h2>ผลงานของเรา</h2>
-      <p>รวมภาพผลงานการติดตั้งจริงจากทีมช่างทรัพย์ไพศาล อลูมิเนียม การันตีความประณีต แข็งแรง และใส่ใจทุกรายละเอียด</p>
+      <p>รวมตัวอย่างผลงานการติดตั้งประตู หน้าต่าง และงานกระจกอลูมิเนียมคุณภาพจากทีมงานอุดมพงษ์ (คลิกที่ภาพเพื่อดูขนาดเต็ม)</p>
     </div>
-
-    <div class="filter-menu">
-      <button class="filter-btn active" onclick="filterGallery('all', event)">ทั้งหมด</button>
-      <button class="filter-btn" onclick="filterGallery('door', event)">ประตู - หน้าต่าง</button>
-      <button class="filter-btn" onclick="filterGallery('balcony', event)">งานระเบียง</button>
-      <button class="filter-btn" onclick="filterGallery('other', event)">ฉากกั้น & ผลงานอื่นๆ</button>
-    </div>
-
-    <div class="gallery-grid">
-      <!-- ประตู-หน้าต่าง -->
-      <div class="gallery-item door"><div class="img-box"><img src="ประตู.jpg" alt="ผลงานติดตั้งประตูอลูมิเนียม" loading="lazy"><div class="img-overlay"><span>ประตู - หน้าต่าง</span></div></div></div>
-      <div class="gallery-item door"><div class="img-box"><img src="ประตู7.jpg" alt="ผลงานติดตั้งประตูอลูมิเนียม" loading="lazy"><div class="img-overlay"><span>ประตู - หน้าต่าง</span></div></div></div>
-      <div class="gallery-item door"><div class="img-box"><img src="ประตู8.jpg" alt="ผลงานติดตั้งประตูอลูมิเนียม" loading="lazy"><div class="img-overlay"><span>ประตู - หน้าต่าง</span></div></div></div>
-      <div class="gallery-item door"><div class="img-box"><img src="ประตู9.jpg" alt="ผลงานติดตั้งประตูอลูมิเนียม" loading="lazy"><div class="img-overlay"><span>ประตู - หน้าต่าง</span></div></div></div>
-      <div class="gallery-item door"><div class="img-box"><img src="ประตู10.jpg" alt="ผลงานติดตั้งประตูอลูมิเนียม" loading="lazy"><div class="img-overlay"><span>ประตู - หน้าต่าง</span></div></div></div>
-      <div class="gallery-item door"><div class="img-box"><img src="ประตู11.jpg" alt="ผลงานติดตั้งประตูอลูมิเนียม" loading="lazy"><div class="img-overlay"><span>ประตู - หน้าต่าง</span></div></div></div>
-      <div class="gallery-item door"><div class="img-box"><img src="ประตู12.jpg" alt="ผลงานติดตั้งประตูอลูมิเนียม" loading="lazy"><div class="img-overlay"><span>ประตู - หน้าต่าง</span></div></div></div>
-      <div class="gallery-item door"><div class="img-box"><img src="ประตู13.jpg" alt="ผลงานติดตั้งประตูอลูมิเนียม" loading="lazy"><div class="img-overlay"><span>ประตู - หน้าต่าง</span></div></div></div>
-      <div class="gallery-item door"><div class="img-box"><img src="ประตู14.jpg" alt="ผลงานติดตั้งประตูอลูมิเนียม" loading="lazy"><div class="img-overlay"><span>ประตู - หน้าต่าง</span></div></div></div>
-
-      <!-- งานระเบียง -->
-      <div class="gallery-item balcony"><div class="img-box"><img src="ระเบียง1.jpg" alt="ผลงานติดตั้งระเบียงกระจก" loading="lazy"><div class="img-overlay"><span>ระเบียงกันตก</span></div></div></div>
-      <div class="gallery-item balcony"><div class="img-box"><img src="ระเบียง2.jpg" alt="ผลงานติดตั้งระเบียงกระจก" loading="lazy"><div class="img-overlay"><span>ระเบียงกันตก</span></div></div></div>
-      <div class="gallery-item balcony"><div class="img-box"><img src="ระเบียง3.jpg" alt="ผลงานติดตั้งระเบียงกระจก" loading="lazy"><div class="img-overlay"><span>ระเบียงกันตก</span></div></div></div>
-      <div class="gallery-item balcony"><div class="img-box"><img src="ระเบียง4.jpg" alt="ผลงานติดตั้งระเบียงกระจก" loading="lazy"><div class="img-overlay"><span>ระเบียงกันตก</span></div></div></div>
-      <div class="gallery-item balcony"><div class="img-box"><img src="ระเบียง5.jpg" alt="ผลงานติดตั้งระเบียงกระจก" loading="lazy"><div class="img-overlay"><span>ระเบียงกันตก</span></div></div></div>
-
-      <!-- ผลงานอื่นๆ -->
-      <div class="gallery-item other"><div class="img-box"><img src="ผลงาน1.jpg" alt="ผลงานการติดตั้งกระจกอลูมิเนียม" loading="lazy"><div class="img-overlay"><span>ผลงานติดตั้ง</span></div></div></div>
-      <div class="gallery-item other"><div class="img-box"><img src="ผลงาน2.jpg" alt="ผลงานการติดตั้งกระจกอลูมิเนียม" loading="lazy"><div class="img-overlay"><span>ผลงานติดตั้ง</span></div></div></div>
-      <div class="gallery-item other"><div class="img-box"><img src="ผลงาน3.jpg" alt="ผลงานการติดตั้งกระจกอลูมิเนียม" loading="lazy"><div class="img-overlay"><span>ผลงานติดตั้ง</span></div></div></div>
-      <div class="gallery-item other"><div class="img-box"><img src="ผลงาน4.jpg" alt="ผลงานการติดตั้งกระจกอลูมิเนียม" loading="lazy"><div class="img-overlay"><span>ผลงานติดตั้ง</span></div></div></div>
-      <div class="gallery-item other"><div class="img-box"><img src="ผลงาน5.jpg" alt="ผลงานการติดตั้งกระจกอลูมิเนียม" loading="lazy"><div class="img-overlay"><span>ผลงานติดตั้ง</span></div></div></div>
-      <div class="gallery-item other"><div class="img-box"><img src="ผลงาน6.jpg" alt="ผลงานการติดตั้งกระจกอลูมิเนียม" loading="lazy"><div class="img-overlay"><span>ผลงานติดตั้ง</span></div></div></div>
+    <div class="gallery" id="gallery">
+      <figure data-src="IMG_2501.JPG"><div class="img" style="background-image:url('IMG_2501.JPG')"></div><figcaption>ผลงาน 01</figcaption></figure>
+      <figure data-src="IMG_2506.JPG"><div class="img" style="background-image:url('IMG_2506.JPG')"></div><figcaption>ผลงาน 02</figcaption></figure>
+      <figure data-src="IMG_2507.PNG"><div class="img" style="background-image:url('IMG_2507.PNG')"></div><figcaption>ผลงาน 03</figcaption></figure>
+      <figure data-src="IMG_2508.JPG"><div class="img" style="background-image:url('IMG_2508.JPG')"></div><figcaption>ผลงาน 04</figcaption></figure>
+      <figure data-src="IMG_2509.PNG"><div class="img" style="background-image:url('IMG_2509.PNG')"></div><figcaption>ผลงาน 05</figcaption></figure>
+      <figure data-src="IMG_2510.JPG"><div class="img" style="background-image:url('IMG_2510.JPG')"></div><figcaption>ผลงาน 06</figcaption></figure>
+      <figure data-src="IMG_2511.JPG"><div class="img" style="background-image:url('IMG_2511.JPG')"></div><figcaption>ผลงาน 07</figcaption></figure>
+      <figure data-src="IMG_2512.JPG"><div class="img" style="background-image:url('IMG_2512.JPG')"></div><figcaption>ผลงาน 08</figcaption></figure>
+      <figure data-src="IMG_2513.JPG"><div class="img" style="background-image:url('IMG_2513.JPG')"></div><figcaption>ผลงาน 09</figcaption></figure>
+      <figure data-src="IMG_2514.PNG"><div class="img" style="background-image:url('IMG_2514.PNG')"></div><figcaption>ผลงาน 10</figcaption></figure>
+      <figure data-src="IMG_2515.JPG"><div class="img" style="background-image:url('IMG_2515.JPG')"></div><figcaption>ผลงาน 11</figcaption></figure>
+      <figure data-src="IMG_2516.JPG"><div class="img" style="background-image:url('IMG_2516.JPG')"></div><figcaption>ผลงาน 12</figcaption></figure>
+      <figure data-src="IMG_2517.PNG"><div class="img" style="background-image:url('IMG_2517.PNG')"></div><figcaption>ผลงาน 13</figcaption></figure>
+      <figure data-src="IMG_2519.PNG"><div class="img" style="background-image:url('IMG_2519.PNG')"></div><figcaption>ผลงาน 14</figcaption></figure>
+      <figure data-src="IMG_2520.JPG"><div class="img" style="background-image:url('IMG_2520.JPG')"></div><figcaption>ผลงาน 15</figcaption></figure>
+      <figure data-src="IMG_2521.JPG"><div class="img" style="background-image:url('IMG_2521.JPG')"></div><figcaption>ผลงาน 16</figcaption></figure>
+      <figure data-src="IMG_2522.JPG"><div class="img" style="background-image:url('IMG_2522.JPG')"></div><figcaption>ผลงาน 17</figcaption></figure>
     </div>
   </div>
 </section>
 
-<!-- FAQ Section -->
-<section id="faq" class="faq-section">
+<!-- ===== FAQ ===== -->
+<section id="faq">
   <div class="container">
     <div class="section-title">
       <span>FAQ</span>
       <h2>คำถามที่พบบ่อย</h2>
-      <p>คลายทุกข้อสงสัยเกี่ยวกับบริการ วัดหน้างาน และขั้นตอนการติดตั้ง</p>
+      <p>รวมคำถามที่ลูกค้าสอบถามเข้ามาบ่อยที่สุดเกี่ยวกับงานกระจกและอลูมิเนียม</p>
     </div>
-
-    <div class="faq-container">
-      <details class="faq-item">
-        <summary class="faq-question">
-          <span>ประเมินราคาหน้างาน มีค่าใช้จ่ายไหม?</span>
-          <span class="faq-icon">+</span>
-        </summary>
-        <div class="faq-answer">
-          <p>ไม่มีค่าใช้จ่ายครับ ร้านทรัพย์ไพศาล อลูมิเนียม มีบริการประเมินราคาและวัดหน้างานฟรี! โดยช่างผู้เชี่ยวชาญครับ</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary class="faq-question">
-          <span>สั่งทำและติดตั้ง ใช้เวลาทั้งหมดกี่วัน?</span>
-          <span class="faq-icon">+</span>
-        </summary>
-        <div class="faq-answer">
-          <p>โดยทั่วไปใช้เวลาเตรียมงานผลิตและสั่งตัดกระจกประมาณ 3 - 7 วัน ขึ้นอยู่กับขนาดและปริมาณงาน ส่วนวันเข้าติดตั้งจริงหน้างานมักใช้เวลาจบภายใน 1 - 2 วันครับ</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary class="faq-question">
-          <span>งานติดตั้งมีการรับประกันไหม?</span>
-          <span class="faq-icon">+</span>
-        </summary>
-        <div class="faq-answer">
-          <p>เรารับประกันคุณภาพงานติดตั้งทุกชิ้น หากพบปัญหารั่วซึม บานประตูติดขัด หรืออุปกรณ์ชำรุดจากการติดตั้ง สามารถแจ้งช่างเข้ามาดูแลแก้ไขได้ทันทีครับ</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary class="faq-question">
-          <span>ทางร้านใช้อุปกรณ์และอลูมิเนียมเกรดไหน?</span>
-          <span class="faq-icon">+</span>
-        </summary>
-        <div class="faq-answer">
-          <p>เราเลือกใช้อลูมิเนียมเกรดมาตรฐานหนาพิเศษ แข็งแรง ทนทาน ไม่เป็นสนิม พร้อมตัวเลือกกระจกเทมเปอร์นิรภัย อุปกรณ์ล้อเลื่อนและมือจับคุณภาพสูง เพื่อความปลอดภัยสูงสุด</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary class="faq-question">
-          <span>ให้บริการในพื้นที่ไหนบ้าง?</span>
-          <span class="faq-icon">+</span>
-        </summary>
-        <div class="faq-answer">
-          <p>ยินดีให้บริการทั้งบ้านพักอาศัย คอนโด ออฟฟิศ และอาคารพาณิชย์ ในพื้นที่และจังหวัดใกล้เคียง สอบถามคิวงานและนัดประเมินล่วงหน้าได้เลยครับ</p>
-        </div>
-      </details>
+    <div class="faq-wrap">
+      <div class="faq-item">
+        <button class="faq-q">มีค่าใช้จ่ายในการเข้าไปวัดหน้างานหรือไม่?</button>
+        <div class="faq-a"><p>ไม่มีค่าใช้จ่ายครับ เราให้บริการเข้าวัดหน้างานและประเมินราคาฟรี พร้อมให้คำแนะนำเรื่องรูปแบบและวัสดุที่เหมาะกับพื้นที่ของคุณ เพียงนัดหมายล่วงหน้าผ่านโทรศัพท์หรือ LINE</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">งานติดตั้งใช้เวลานานแค่ไหน?</button>
+        <div class="faq-a"><p>ขึ้นอยู่กับขนาดงาน โดยทั่วไปงานประตู-หน้าต่างจำนวนไม่มากใช้เวลาติดตั้ง 1 วัน ส่วนงานกั้นห้องกระจกหรือกระจกระเบียงขนาดใหญ่ประมาณ 2-3 วัน ทั้งนี้ต้องรอผลิตชิ้นงานหลังวัดหน้างานประมาณ 7-14 วัน</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">กระจกเทมเปอร์กับกระจกธรรมดาต่างกันอย่างไร?</button>
+        <div class="faq-a"><p>กระจกเทมเปอร์ (Tempered) ผ่านการอบความร้อนสูง ทำให้แข็งแรงกว่ากระจกธรรมดา 4-5 เท่า และเมื่อแตกจะแตกเป็นเม็ดเล็กๆ ไม่มีคม ปลอดภัยกว่ามาก จึงเหมาะกับงานระเบียง ประตู และพื้นที่ที่มีคนสัญจร</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">ควรเลือกกระจกหนาเท่าไหร่?</button>
+        <div class="faq-a"><p>งานหน้าต่างทั่วไปนิยมใช้กระจก 5-6 มม. งานประตูบานเลื่อนและกั้นห้อง 8 มม. ส่วนงานระเบียงหรือกระจกบานใหญ่แนะนำ 10-12 มม. เพื่อความแข็งแรง ทีมงานจะแนะนำความหนาที่เหมาะสมตามหน้างานจริงให้อีกครั้ง</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">กระจกกันความร้อน / กันแสง UV มีให้เลือกไหม?</button>
+        <div class="faq-a"><p>มีครับ เรามีกระจกเขียวตัดแสง กระจกสะท้อนแสง และบริการติดฟิล์มกรองแสง ช่วยลดความร้อนเข้าบ้าน ประหยัดค่าแอร์ และช่วยถนอมเฟอร์นิเจอร์ไม่ให้ซีดจากแสงแดด</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">ประตู-หน้าต่างอลูมิเนียมกันน้ำรั่วซึมได้จริงหรือไม่?</button>
+        <div class="faq-a"><p>ได้ครับ หากติดตั้งอย่างถูกวิธี เราใช้ซิลิโคนเกรดคุณภาพและยางอัดขอบกระจกที่ได้มาตรฐาน พร้อมออกแบบรางระบายน้ำ ช่วยป้องกันน้ำฝนรั่วซึมและกันฝุ่นได้ดี</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">มีการรับประกันงานหรือไม่?</button>
+        <div class="faq-a"><p>มีครับ เรารับประกันงานติดตั้งและวัสดุตามเงื่อนไข หากพบปัญหาจากการติดตั้ง เช่น บานฝืด รางเลื่อนไม่ลื่น หรือรอยรั่วซึม สามารถแจ้งเข้ามาได้ ทีมงานจะเข้าไปแก้ไขให้</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">รับงานนอกพื้นที่ไหม และคิดค่าเดินทางอย่างไร?</button>
+        <div class="faq-a"><p>รับงานทั้งในพื้นที่และต่างจังหวัดครับ ค่าเดินทางขึ้นอยู่กับระยะทางและขนาดของงาน หากเป็นงานขนาดใหญ่มักไม่คิดค่าเดินทางเพิ่ม แนะนำให้แจ้งพื้นที่หน้างานเข้ามา เดี๋ยวเราประเมินให้ทันที</p></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Contact Section -->
-<section id="contact" class="contact-section">
+<section id="contact" style="background:var(--light)">
   <div class="container">
     <div class="section-title">
       <span>Contact Us</span>
       <h2>ติดต่อเรา</h2>
-      <p>ร้านกระจก อลูมิเนียม ทรัพย์ไพศาล ยินดีให้บริการ โดยช่างมีประสบการณ์ มากกว่า 10 ปี</p>
+      <p>ประเมินหน้างานฟรี หรือสอบถามรายละเอียดเพิ่มเติมได้ตลอดเวลา</p>
     </div>
-
-    <div class="contact-grid">
-      <div class="contact-card">
-        <div class="contact-item">
-          <div class="contact-icon">📞</div>
-          <div class="contact-detail">
-            <h3>โทรสอบถาม / ประเมินราคา</h3>
-            <p>กดเพื่อโทรออกได้ทันที</p>
-            <div class="phone-links">
-              <a href="tel:0984060642" class="btn-link">098-406-0642</a>
-              <a href="tel:0891065131" class="btn-link">089-106-5131</a>
-              <a href="tel:0810764923" class="btn-link">081-076-4923</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="contact-item">
-          <div class="contact-icon">💬</div>
-          <div class="contact-detail">
-            <h3>LINE ID</h3>
-            <p>ส่งแบบหน้างานเพื่อประเมินราคาทางไลน์</p>
-            <a href="https://line.me/ti/p/~0984060642sps" target="_blank" class="line-btn">
-              เพิ่มเพื่อน LINE: 0984060642sps
-            </a>
-          </div>
-        </div>
-
-        <div class="contact-item">
-          <div class="contact-icon">🌐</div>
-          <div class="contact-detail">
-            <h3>Facebook Page</h3>
-            <p>รับชมผลงานอัปเดตและพูดคุยผ่าน Facebook</p>
-            <div class="fb-links">
-              <a href="https://m.facebook.com/Supphaisarn" target="_blank" class="btn-link-fb">เพจทรัพย์ไพศาล อลูมิเนียม</a>
-              <a href="https://www.facebook.com/profile.php?id=100007999993872" target="_blank" class="btn-link-fb">โปรไฟล์ Facebook</a>
-            </div>
-          </div>
-        </div>
+    <div class="contact-wrap">
+      <div class="info-box">
+        <h3>ข้อมูลติดต่อ</h3>
+        <!-- <<< แก้เบอร์โทรที่ href="tel:0812345678" -->
+        <a class="contact-link" href="tel:0812345678">
+          <div class="ic">📞</div>
+          <div><h4>เบอร์โทรศัพท์</h4><p>081-234-5678 — กดเพื่อโทรทันที</p></div>
+        </a>
+        <!-- <<< แก้ LINE ID ที่ ~@udomphong (ต้องมี @ นำหน้า ถ้าเป็น LINE OA) -->
+        <a class="contact-link line" href="https://line.me/R/ti/p/~@udomphong" target="_blank" rel="noopener">
+          <div class="ic">💬</div>
+          <div><h4>LINE ID</h4><p>@udomphong — กดเพื่อเพิ่มเพื่อนทันที</p></div>
+        </a>
+        <p class="note">⏰ เปิดรับสายทุกวัน 08:00 - 18:00 น. | ตอบกลับทาง LINE ภายใน 1 ชั่วโมง</p>
       </div>
-
-      <div class="contact-card map-card">
-        <div class="guarantee-box">
-          <span class="shield-icon">🛡️</span>
-          <div>
-            <h4>รับประกันงานติดตั้งทุกชิ้นงาน</h4>
-            <p>มั่นใจในคุณภาพ ช่างมีประสบการณ์มากกว่า 10 ปี งานประณีต แข็งแรง ทนทาน</p>
-          </div>
-        </div>
-
-        <div class="map-box">
-          <h3>สถานที่ตั้งร้าน</h3>
-          <p>ร้านกระจก อลูมิเนียม ทรัพย์ไพศาล (S.P.S.)</p>
-          <a href="https://g.co/kgs/B84BMM" target="_blank" class="map-btn">
-            📍 เปิดแผนที่ Google Maps นำทาง
-          </a>
-        </div>
-      </div>
+      <form onsubmit="alert('ส่งข้อมูลเรียบร้อย (เดโม)');return false;">
+        <input type="text" placeholder="ชื่อ-นามสกุล" required>
+        <input type="tel" placeholder="เบอร์โทรศัพท์" required>
+        <select>
+          <option>เลือกบริการที่สนใจ</option>
+          <option>กั้นห้องกระจก / บานสไลด์</option>
+          <option>ประตู - หน้าต่างอลูมิเนียม</option>
+          <option>กระจกระเบียง / หลังคากระจก</option>
+          <option>อื่น ๆ</option>
+        </select>
+        <textarea placeholder="รายละเอียดงานที่ต้องการ"></textarea>
+        <button type="submit" class="btn btn-primary">ส่งข้อความ</button>
+      </form>
     </div>
   </div>
 </section>
 
-<!-- Footer -->
-<footer class="footer">
-  <p>© 2026 ร้านกระจก อลูมิเนียม ทรัพย์ไพศาล (S.P.S.) - สงวนลิขสิทธิ์ทั้งหมด</p>
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="flogo"><b>อุดมพงษ์</b><small>อลูมิเนียม</small></div>
+        <p style="margin-top:12px">ศูนย์รวมงานติดตั้งกระจก อลูมิเนียม บานสไลด์ กั้นห้องกระจก โดยทีมช่างมืออาชีพ</p>
+      </div>
+      <div>
+        <h4>เมนูหลัก</h4>
+        <ul>
+          <li><a href="#home">หน้าแรก</a></li>
+          <li><a href="#services">บริการ</a></li>
+          <li><a href="#portfolio">ผลงาน</a></li>
+          <li><a href="#faq">คำถามที่พบบ่อย</a></li>
+          <li><a href="#contact">ติดต่อ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>ติดต่อ</h4>
+        <ul>
+          <li>📞 <a href="tel:0812345678">081-234-5678</a></li>
+          <li>💬 <a href="https://line.me/R/ti/p/~@udomphong" target="_blank" rel="noopener">LINE: @udomphong</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">© 2026 อุดมพงษ์ อลูมิเนียม - รับติดตั้งงานกระจก อลูมิเนียม ครบวงจร</div>
+  </div>
 </footer>
 
-<!-- Filter Gallery Script -->
+<div class="float-stack">
+  <a href="https://line.me/R/ti/p/~@udomphong" target="_blank" rel="noopener" class="float-btn fb-line" title="แอดไลน์">💬</a>
+  <a href="tel:0812345678" class="float-btn fb-call" title="โทรหาเรา">📞</a>
+</div>
+
+<div class="lightbox" id="lightbox">
+  <span class="close" onclick="closeBox()">&times;</span>
+  <span class="arrow prev" onclick="nav(-1,event)">&#10094;</span>
+  <img id="lbImg" src="" alt="ผลงาน">
+  <span class="arrow next" onclick="nav(1,event)">&#10095;</span>
+</div>
+
 <script>
-  function filterGallery(category, evt) {
-    const items = document.querySelectorAll('.gallery-item');
-    const buttons = document.querySelectorAll('.filter-btn');
-
-    buttons.forEach(btn => btn.classList.remove('active'));
-    if (evt && evt.target) {
-      evt.target.classList.add('active');
-    }
-
-    items.forEach(item => {
-      if (category === 'all' || item.classList.contains(category)) {
-        item.style.display = 'block';
-      } else {
-        item.style.display = 'none';
-      }
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',e=>{
+      const t=document.querySelector(a.getAttribute('href'));
+      if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});
+      document.getElementById('navLinks').classList.remove('open');}
     });
-  }
-</script>
+  });
 
+  document.querySelectorAll('.faq-q').forEach(q=>{
+    q.addEventListener('click',()=>{
+      const item=q.parentElement, isOpen=item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('active'));
+      if(!isOpen) item.classList.add('active');
+    });
+  });
+
+  const figs=[...document.querySelectorAll('#gallery figure')];
+  const box=document.getElementById('lightbox'), lbImg=document.getElementById('lbImg');
+  let idx=0;
+  figs.forEach((f,i)=>f.addEventListener('click',()=>{idx=i;lbImg.src=f.dataset.src;box.classList.add('open');}));
+  function closeBox(){box.classList.remove('open');}
+  function nav(d,e){e.stopPropagation();idx=(idx+d+figs.length)%figs.length;lbImg.src=figs[idx].dataset.src;}
+  box.addEventListener('click',e=>{if(e.target===box)closeBox();});
+  document.addEventListener('keydown',e=>{
+    if(!box.classList.contains('open'))return;
+    if(e.key==='Escape')closeBox();
+    if(e.key==='ArrowRight')nav(1,e);
+    if(e.key==='ArrowLeft')nav(-1,e);
+  });
+</script>
 </body>
 </html>
