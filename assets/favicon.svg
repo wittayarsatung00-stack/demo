@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="ST aluminum">
+  <rect width="64" height="64" fill="#1A1C1E"/>
+  <path d="M18 20h18M18 20v24M18 44h18" stroke="#FFFFFF" stroke-width="4" fill="none"/>
+  <path d="M40 20h10M45 20v24M40 44h10" stroke="#005BB7" stroke-width="4" fill="none"/>
+</svg>
