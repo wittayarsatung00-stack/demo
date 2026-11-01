@@ -1,0 +1,229 @@
+/* ============================================================
+   ST aluminum — Design tokens
+   System: "Anodized Clarity" · Spacing: Fibonacci · Ratio: Φ 1.618
+   ============================================================ */
+
+:root{
+  /* Palette */
+  --alumina:#F2F4F7;      /* base / raw aluminium */
+  --surface:#FFFFFF;      /* elevated surface */
+  --ink:#1A1C1E;          /* primary text */
+  --ink-soft:#5A6270;     /* secondary text (5.6:1 on alumina) */
+  --accent:#005BB7;       /* electric anodize */
+  --accent-deep:#00458C;
+  --rule:#D1D5DB;         /* satin hairline */
+  --rule-strong:#B7BDC6;
+  --steel:#0F1317;        /* dark foundation */
+
+  /* Fibonacci spacing */
+  --f8:8px;
+  --f13:13px;
+  --f21:21px;
+  --f34:34px;
+  --f55:55px;
+  --f89:89px;
+
+  /* Geometry */
+  --golden:1.618;
+  --hair:0.5px;
+  --radius:2px;
+  --shell:1320px;
+  --gutter:clamp(21px, 4vw, 55px);
+
+  /* Type */
+  --font-display:'Inter Tight','IBM Plex Sans Thai',system-ui,sans-serif;
+  --font-body:'IBM Plex Sans','IBM Plex Sans Thai',system-ui,sans-serif;
+  --font-mono:'IBM Plex Mono',ui-monospace,monospace;
+  --lh:1.618;
+
+  /* Motion — machined, dampened inertia */
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --ease-in-out:cubic-bezier(.65,.05,.36,1);
+  --dur:.72s;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+
+html{
+  scroll-behavior:smooth;
+  -webkit-text-size-adjust:100%;
+}
+
+body{
+  margin:0;
+  background:var(--alumina);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:1rem;               /* 16px floor */
+  font-weight:400;
+  line-height:var(--lh);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+figure{margin:0}
+dl,dd,dt{margin:0}
+ul,ol{margin:0;padding:0;list-style:none}
+
+::selection{background:var(--accent);color:#fff}
+
+:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:3px;
+}
+
+/* ---------- Typography ---------- */
+h1,h2,h3,h4{
+  font-family:var(--font-display);
+  font-weight:600;
+  letter-spacing:-.02em;
+  line-height:1.12;
+  margin:0;
+  text-wrap:balance;
+}
+
+h1{font-size:clamp(2.55rem, 5.1vw, 4.6rem)}
+h2{font-size:clamp(1.75rem, 3.1vw, 2.85rem)}
+h3{font-size:clamp(1.12rem, 1.5vw, 1.35rem);line-height:1.28}
+h4{font-size:1rem;line-height:1.35}
+
+p{margin:0;max-width:62ch}
+
+/* ---------- Primitives ---------- */
+.shell{
+  width:100%;
+  max-width:var(--shell);
+  margin-inline:auto;
+  padding-inline:var(--gutter);
+}
+
+.rule{
+  height:var(--hair);
+  background:var(--rule);
+  border:0;
+  margin:0;
+}
+
+.label{
+  font-family:var(--font-mono);
+  font-size:.72rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  font-weight:500;
+}
+
+.label--accent{color:var(--accent)}
+
+/* Section header — hairline + index number in the golden margin */
+.section-head{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1.618fr);
+  gap:var(--f34) var(--f55);
+  align-items:end;
+  padding-block:var(--f34) var(--f55);
+  border-top:var(--hair) solid var(--rule);
+}
+.section-head__aside{
+  display:flex;
+  flex-direction:column;
+  gap:var(--f13);
+}
+.section-head__index{color:var(--accent)}
+.section-head__title{max-width:22ch}
+.section-head__note{
+  color:var(--ink-soft);
+  font-size:1rem;
+  max-width:44ch;
+  justify-self:end;
+}
+
+/* ---------- Buttons ---------- */
+.btn{
+  --btn-bg:var(--accent);
+  --btn-ink:#fff;
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:var(--f34);
+  padding:15px 21px;
+  min-height:52px;
+  background:var(--btn-bg);
+  color:var(--btn-ink);
+  border:var(--hair) solid var(--btn-bg);
+  border-radius:var(--radius);
+  font-family:var(--font-body);
+  font-size:.95rem;
+  font-weight:500;
+  letter-spacing:.01em;
+  cursor:pointer;
+  overflow:hidden;
+  transition:color .45s var(--ease), border-color .45s var(--ease), background .45s var(--ease);
+}
+.btn__arrow{
+  font-family:var(--font-mono);
+  transition:transform .45s var(--ease);
+}
+.btn:hover .btn__arrow{transform:translateX(4px)}
+.btn:hover{background:var(--accent-deep);border-color:var(--accent-deep)}
+
+.btn--ghost{
+  --btn-bg:transparent;
+  --btn-ink:var(--ink);
+  border-color:var(--rule-strong);
+}
+.btn--ghost:hover{
+  background:var(--ink);
+  border-color:var(--ink);
+  color:#fff;
+}
+
+.btn--light{
+  --btn-bg:transparent;
+  --btn-ink:#fff;
+  border-color:rgba(255,255,255,.42);
+}
+.btn--light:hover{background:#fff;border-color:#fff;color:var(--ink)}
+
+/* Inline text link with hairline underline */
+.link-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:var(--f8);
+  padding-block:6px;
+  background:none;
+  border:0;
+  border-bottom:var(--hair) solid var(--rule-strong);
+  font-size:.86rem;
+  font-weight:500;
+  letter-spacing:.01em;
+  cursor:pointer;
+  transition:color .3s var(--ease), border-color .3s var(--ease), gap .3s var(--ease);
+}
+.link-btn:hover{color:var(--accent);border-color:var(--accent);gap:var(--f13)}
+
+/* ---------- Motion ---------- */
+[data-reveal]{
+  opacity:0;
+  transform:translateY(18px);
+  transition:opacity var(--dur) var(--ease), transform var(--dur) var(--ease);
+  transition-delay:var(--delay,0ms);
+}
+[data-reveal].is-in{
+  opacity:1;
+  transform:none;
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{
+    animation-duration:.001ms !important;
+    transition-duration:.001ms !important;
+  }
+  [data-reveal]{opacity:1;transform:none}
+}
